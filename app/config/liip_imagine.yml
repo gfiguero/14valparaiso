@@ -6,10 +6,10 @@ liip_imagine:
         cache: ~
         member_photography_small:
             quality: 75
-            default_image: /uploads/member/BomberoDefault.jpg
+            default_image: /uploads/member/BomberoDefaultSmall.jpg
             filters:
-                upscale: { min: [120, 120] }
-                thumbnail: { size: [120, 120], mode: outbound }
+                upscale: { min: [120, 180] }
+                thumbnail: { size: [120, 180], mode: outbound }
         member_photography_medium:
             quality: 75
             default_image: /uploads/member/BomberoDefault.jpg

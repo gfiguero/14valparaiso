@@ -53,8 +53,13 @@ membercourse:
         title: Eliminación de Curso
         message: Los datos del curso no podrán ser recuperados
         confirm: Confirmar Eliminación
+    flash:
+        created: Curso creado satistactoriamente
+        edited: Curso editado satistactoriamente
+        deleted: Curso eliminado
     form:
         name: Nombre
+        initials: Nombre Corto
         rank: Número Ordinal
 
 memberrole:
@@ -75,6 +80,10 @@ memberrole:
         title: Eliminación de Cargo
         message: Los datos del cargo no podrán ser recuperados
         confirm: Confirmar Eliminación
+    flash:
+        created: Cargo creado satistactoriamente
+        edited: Cargo editado satistactoriamente
+        deleted: Cargo eliminado
     form:
         name: Nombre
         rank: Número Ordinal

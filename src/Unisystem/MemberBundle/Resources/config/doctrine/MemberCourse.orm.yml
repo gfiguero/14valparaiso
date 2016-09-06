@@ -11,6 +11,9 @@ Unisystem\MemberBundle\Entity\MemberCourse:
         name:
             type: string
             length: 300
+        initials:
+            type: string
+            length: 100
         rank:
             type: integer
         createdAt:

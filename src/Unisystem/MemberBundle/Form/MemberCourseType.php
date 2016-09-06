@@ -20,6 +20,11 @@ class MemberCourseType extends AbstractType
                 'label' => 'membercourse.form.name',
                 'translation_domain' => 'UnisystemMemberBundle',
             ))
+            ->add('initials', null, array(
+                'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'label' => 'membercourse.form.initials',
+                'translation_domain' => 'UnisystemMemberBundle',
+            ))
             ->add('rank', null, array(
                 'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'label' => 'membercourse.form.rank',

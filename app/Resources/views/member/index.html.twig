@@ -28,7 +28,8 @@
                                     <div class="panel-body">
                                         <div class="media">
                                             <div class="media-left">
-                                                {% if member.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(member, 'file', 'Unisystem\\MemberBundle\\Entity\\Member')|imagine_filter('member_photography_small') }}" alt="{{ 1 }}" />{% endif %}
+                                                {% if member.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(member, 'file', 'Unisystem\\MemberBundle\\Entity\\Member')|imagine_filter('member_photography_small') }}" />
+                                                {% else %}<img class="media-object img-rounded" src="{{ 'default'|imagine_filter('member_photography_small') }}" />{% endif %}
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="media-heading">{% if member.name %}{{ member.name }}{% else %}&nbsp;{% endif %}</h4>

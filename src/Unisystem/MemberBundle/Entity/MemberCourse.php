@@ -167,4 +167,33 @@ class MemberCourse
     {
         return $this->rank;
     }
+    /**
+     * @var string
+     */
+    private $initials;
+
+
+    /**
+     * Set initials
+     *
+     * @param string $initials
+     *
+     * @return MemberCourse
+     */
+    public function setInitials($initials)
+    {
+        $this->initials = $initials;
+
+        return $this;
+    }
+
+    /**
+     * Get initials
+     *
+     * @return string
+     */
+    public function getInitials()
+    {
+        return $this->initials;
+    }
 }

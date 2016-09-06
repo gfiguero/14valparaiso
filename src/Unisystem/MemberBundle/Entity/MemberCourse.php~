@@ -18,6 +18,11 @@ class MemberCourse
     private $name;
 
     /**
+     * @var integer
+     */
+    private $rank;
+
+    /**
      * @var \DateTime
      */
     private $createdAt;
@@ -138,33 +143,28 @@ class MemberCourse
     {
         return $this->deletedAt;
     }
-    /**
-     * @var integer
-     */
-    private $order;
-
 
     /**
-     * Set order
+     * Set rank
      *
-     * @param integer $order
+     * @param integer $rank
      *
      * @return MemberCourse
      */
-    public function setOrder($order)
+    public function setRank($rank)
     {
-        $this->order = $order;
+        $this->rank = $rank;
 
         return $this;
     }
 
     /**
-     * Get order
+     * Get rank
      *
      * @return integer
      */
-    public function getOrder()
+    public function getRank()
     {
-        return $this->order;
+        return $this->rank;
     }
 }

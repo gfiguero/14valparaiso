@@ -68,7 +68,7 @@ class MemberCourseController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($memberCourse);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'memberCourse.created' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'membercourse.flash.created' );    
 
             return $this->redirect($request->headers->get('referer'));
         }
@@ -107,7 +107,7 @@ class MemberCourseController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($memberCourse);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'memberCourse.edited' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'membercourse.flash.edited' );
 
             return $this->redirect($request->headers->get('referer'));
         }
@@ -132,7 +132,7 @@ class MemberCourseController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($memberCourse);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'danger', 'memberCourse.deleted' );    
+            $request->getSession()->getFlashBag()->add( 'danger', 'membercourse.flash.deleted' );
         }
 
         return $this->redirect($request->headers->get('referer'));
