@@ -1,0 +1,35 @@
+{% extends ":Admin:base.html.twig" %}
+
+{% trans_default_domain 'UnisystemUserBundle' %}
+
+{% block title %}{{ 'profile.show.title'|trans({}, 'UnisystemUserBundle') }}{% endblock %}
+
+{% block body %}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{ 'profile.show.title'|trans({}, 'UnisystemUserBundle') }}</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="btn-toolbar">
+                        <a type="button" class="btn btn-warning" href="{{ path('fos_user_profile_edit') }}">{{ icon('pencil') }}&nbsp;{{ 'profile.edit.link'|trans({}, 'UnisystemUserBundle') }}</a>
+                        <a type="button" class="btn btn-info" href="{{ path('fos_user_change_password', { 'id': user.id }) }}">{{ icon('key') }}&nbsp;{{ 'change_password.link'|trans({}, 'UnisystemUserBundle') }}</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
+                        <dt>{{ 'user.name'|trans({}, 'UnisystemUserBundle') }}</dt>
+                            <dd>{% if user.name %}{{ user.name }}{% endif %}</dd>
+                        <dt>{{ 'user.username'|trans({}, 'UnisystemUserBundle') }}</dt>
+                            <dd>{% if user.name %}{{ user.username }}{% endif %}</dd>
+                        <dt>{{ 'user.email'|trans({}, 'UnisystemUserBundle') }}</dt>
+                            <dd>{% if user.name %}{{ user.email }}{% endif %}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

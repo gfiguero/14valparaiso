@@ -1,0 +1,21 @@
+{% extends ":User:base.html.twig" %}
+
+{% trans_default_domain 'UnisystemUserBundle' %}
+
+{% block title %}{{ 'registration.title'|trans({}, 'UnisystemUserBundle') }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 class="page-header">{{ 'registration.title'|trans({}, 'UnisystemUserBundle') }}</h1>
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'UnisystemUserBundle') }}</p>
+                        <a href="{{ path('fos_user_registration_register') }}" type="button" class="btn btn-primary">{{ icon('save') }}&nbsp;{{ 'registration.back'|trans({}, 'UnisystemUserBundle') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

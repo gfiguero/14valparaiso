@@ -1,0 +1,24 @@
+resource_index:
+    path:     /
+    defaults: { _controller: "UnisystemResourceBundle:Resource:index" }
+    methods:  GET
+
+resource_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemResourceBundle:Resource:show" }
+    methods:  GET
+
+resource_new:
+    path:     /new
+    defaults: { _controller: "UnisystemResourceBundle:Resource:new" }
+    methods:  [GET, POST]
+
+resource_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemResourceBundle:Resource:edit" }
+    methods:  [GET, POST]
+
+resource_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemResourceBundle:Resource:delete" }
+    methods:  DELETE

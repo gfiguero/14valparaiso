@@ -1,0 +1,52 @@
+product: Productos
+product.photography: Fotografías
+product.category: Categorías
+product.property: Propiedades de Categorías
+
+product.index: Lista de Productos
+product.list: Lista de Productos
+product.new: Nuevo Producto
+product.register: Registrar Producto
+product.show: Ver Producto
+product.edit: Editar Producto
+product.save: Guardar Cambios
+product.delete: Eliminar Producto
+product.name: Nombre
+product.createdAt: Registrado
+product.updatedAt: Última Actualización
+
+productphotography.index: Lista de Fotografías de Producto
+productphotography.list: Lista de Fotografías de Producto
+productphotography.new: Nueva Fotografía de Producto
+productphotography.register: Registrar Fotografía de Producto
+productphotography.show: Ver Fotografía de Producto
+productphotography.edit: Editar Fotografía de Producto
+productphotography.save: Guardar Cambios
+productphotography.delete: Eliminar Fotografía de Producto
+productphotography.name: Nombre
+productphotography.createdAt: Registrado
+productphotography.updatedAt: Última Actualización
+
+productcategory.index: Lista de Categorías de Producto
+productcategory.list: Lista de Categorías de Producto
+productcategory.new: Nueva Categoría de Producto
+productcategory.register: Registrar Categoría de Producto
+productcategory.show: Ver Categoría de Producto
+productcategory.edit: Editar Categoría de Producto
+productcategory.save: Guardar Cambios
+productcategory.delete: Eliminar Categoría de Producto
+productcategory.name: Nombre
+productcategory.createdAt: Registrado
+productcategory.updatedAt: Última Actualización
+
+productproperty.index: Lista de Propiedades de Categorías
+productproperty.list: Lista de Propiedades de Categorías
+productproperty.new: Nueva Propiedad de Categoría
+productproperty.register: Registrar Propiedad de Categoría
+productproperty.show: Ver Propiedad de Categoría
+productproperty.edit: Editar Propiedad de Categoría
+productproperty.save: Guardar Cambios
+productproperty.delete: Eliminar Propiedad de Categoría
+productproperty.name: Nombre
+productproperty.createdAt: Registrado
+productproperty.updatedAt: Última Actualización

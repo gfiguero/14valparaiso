@@ -1,0 +1,94 @@
+page:
+    menu:
+        group: Página Principal
+        page: Portadas
+        photography: Fotografías
+        service: Servicios
+        process: Etapas de Proceso
+        publication: Publicaciones
+    list:
+        title: Lista de Portadas
+        link: Lista de portadas
+    new:
+        title: Nueva Portada
+        link: Crear Nueva Portada
+        submit: Registrar Portada
+    show:
+        title: Ver Portada
+        link: Ver Portada
+    edit:
+        title: Editar Portada
+        link: Editar Portada
+        submit: Guardar Cambios
+    delete:
+        title: Eliminar Portada
+        link: Eliminar Portada
+        submit: Confirmar Eliminación
+    form:
+        name: Nombre
+        createdAt: Registrado
+        updatedAt: Última Actualización
+
+pagephotography:
+    list:
+        title: Lista de Fotografías de Portada
+        link: Lista de Fotografías de Portada
+    new:
+        title: Nueva Fotografía de Portada
+        link: Nueva Fotografía de Portada
+        submit: Registrar Fotografía de Portada
+    show:
+        title: Ver Fotografía de Portada
+        link: Ver Fotografía de Portada
+    edit:
+        title: Editar Fotografía de Portada
+        link: Editar Fotografía de Portada
+        submit: Guardar Cambios
+    delete:
+        title: Eliminar Fotografía de Portada
+        link: Eliminar Fotografía de Portada
+        submit: Confirmar Eliminación
+    form:
+        name: Nombre
+        createdAt: Registrado
+        updatedAt: Última Actualización
+
+pageprocess:
+    index: Lista de Etapas de Proceso
+    list: Lista de Etapas de Proceso
+    new: Nueva Etapa de Proceso
+    register: Registrar Etapa de Proceso
+    show: Ver Etapa de Proceso
+    edit: Editar Etapa de Proceso
+    save: Guardar Cambios
+    delete: Eliminar Etapa de Proceso
+    name: Nombre
+    createdAt: Registrado
+    updatedAt: Última Actualización
+
+pagepublication:
+    index: Lista de Publicaciones
+    list: Lista de Publicaciones
+    new: Nueva Publicación
+    register: Registrar Publicación
+    show: Ver Publicación
+    edit: Editar Publicación
+    save: Guardar Cambios
+    delete: Eliminar Publicación
+    name: Nombre
+    createdAt: Registrado
+    updatedAt: Última Actualización
+
+pageservice:
+    index: Lista de Servicios
+    list: Lista de Servicios
+    new: Nuevo Servicio
+    register: Registrar Servicio
+    show: Ver Servicio
+    edit: Editar Servicio
+    save: Guardar Cambios
+    delete: Eliminar Servicio
+    name: Nombre
+    createdAt: Registrado
+    updatedAt: Última Actualización
+

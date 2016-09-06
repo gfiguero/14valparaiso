@@ -1,0 +1,70 @@
+// Global Styles
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800);
+
+// Wrappers
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    //min-height: 568px;
+    background-color: #fff;
+    border: 0;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+    }
+}
+
+// DataTables Overrides
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    background: transparent;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: fontawesome;
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: fontawesome;
+}
+
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: rgba(50,50,50,.5);
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.name {
+    display: inline-block;
+    .text-overflow();    
+}
+
+@media (min-width: 768px) {
+    .dl-horizontal dt {
+        float: left;
+        clear: left;
+        text-align: right;
+    }
+}
+

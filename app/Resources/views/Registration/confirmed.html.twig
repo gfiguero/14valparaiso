@@ -1,0 +1,21 @@
+{% extends ":User:base.html.twig" %}
+
+{% trans_default_domain 'UnisystemUserBundle' %}
+
+{% block title %}{{ 'registration.confirmed.title'|trans({}, 'UnisystemUserBundle') }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 class="page-header">{{ 'registration.confirmed.title'|trans({}, 'UnisystemUserBundle') }}</h1>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>{{ 'registration.confirmed.message'|trans({'%username%': user.username, '%name%': user.name}, 'UnisystemUserBundle') }}</p>
+                        {% if targetUrl %}<a href="{{ targetUrl }}" type="button" class="btn btn-primary">{{ icon('save') }}&nbsp;{{ 'registration.continue'|trans({}, 'UnisystemUserBundle') }}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

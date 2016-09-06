@@ -1,0 +1,4 @@
+services:
+#    unisystem_page.example:
+#        class: Unisystem\PageBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,48 @@
+fos_user:
+    db_driver:                  orm
+    firewall_name:              main
+    user_class:                 Unisystem\UserBundle\Entity\User
+    use_listener:               true
+    use_username_form_type:     true
+    model_manager_name:         null
+    from_email:
+        address:                administracion@unisign.cl
+        sender_name:            Equipo de Unisign
+    profile:
+        form:
+            type:               Unisystem\UserBundle\Form\ProfileType
+            name:               unisystem_user_profile_form
+            validation_groups:  [Profile, Default]
+    change_password:
+        form:
+            type:               Unisystem\UserBundle\Form\ChangePasswordType
+            name:               unisystem_user_change_password_form
+            validation_groups:  [ChangePassword, Default]
+    service:
+        mailer:                 fos_user.mailer.default
+        email_canonicalizer:    fos_user.util.canonicalizer.default
+        username_canonicalizer: fos_user.util.canonicalizer.default
+        token_generator:        fos_user.util.token_generator.default
+        user_manager:           fos_user.user_manager.default
+    registration:
+        confirmation:
+            from_email: # Use this node only if you don't want the global email address for the confirmation email
+                address:        garri.figueroa@unisign.cl
+                sender_name:    Equipo de Unisign
+            enabled:            true
+            template:           :Email:Registration.email.twig
+        form:
+            type:               Unisystem\UserBundle\Form\RegistrationType
+            name:               unisystem_user_registration_form
+            validation_groups:  [Registration, Default]
+    resetting:
+        token_ttl: 86400
+        email:
+            from_email:
+                address:        garri.figueroa@unisign.cl
+                sender_name:    Equipo de Unisign
+            template:           :Email:Resetting.email.twig
+        form:
+            type:               Unisystem\UserBundle\Form\ResettingType
+            name:               unisystem_user_resetting_form
+            validation_groups:  [ResetPassword, Default]

@@ -1,0 +1,4 @@
+Unisystem\ResourceBundle\Entity\Resource:
+    file:
+        mapping:           resource
+        filename_property: photography

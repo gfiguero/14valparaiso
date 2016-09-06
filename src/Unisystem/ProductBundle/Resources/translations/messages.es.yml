@@ -1,0 +1,16 @@
+product.list: Productos
+product.photography: Fotos
+product.category: Categorías
+product.property: Propiedades
+
+category.list: Lista de Categorías de Productos
+category.new: Nueva Categoría de Producto
+category.name: Nombre de la Categoría
+category.createdAt: Registrado
+category.updatedAt: Última Actualización
+
+photography.list: Lista de Fotos de Productos
+photography.new: Nueva Foto de Producto
+photography.name: Nombre de la Foto
+photography.createdAt: Registrado
+photography.updatedAt: Última Actualización

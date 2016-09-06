@@ -1,0 +1,39 @@
+notice: Noticias
+notice.photography: Fotografías
+notice.category: Categorías
+
+notice.index: Lista de Noticias
+notice.list: Lista de Noticias
+notice.new: Nueva Noticia
+notice.register: Registrar Noticia
+notice.show: Ver Noticia
+notice.edit: Editar Noticia
+notice.save: Guardar Cambios
+notice.delete: Eliminar Noticia
+notice.name: Nombre
+notice.createdAt: Registrado
+notice.updatedAt: Última Actualización
+
+noticephotography.index: Lista de Fotografías de Noticia
+noticephotography.list: Lista de Fotografías de Noticia
+noticephotography.new: Nueva Fotografía de Noticia
+noticephotography.register: Registrar Fotografía de Noticia
+noticephotography.show: Ver Fotografía de Noticia
+noticephotography.edit: Editar Fotografía de Noticia
+noticephotography.save: Guardar Cambios
+noticephotography.delete: Eliminar Fotografía de Noticia
+noticephotography.name: Nombre
+noticephotography.createdAt: Registrado
+noticephotography.updatedAt: Última Actualización
+
+noticecategory.index: Lista de Categorías de Noticia
+noticecategory.list: Lista de Categorías de Noticia
+noticecategory.new: Nueva Categoría de Noticia
+noticecategory.register: Registrar Categoría de Noticia
+noticecategory.show: Ver Categoría de Noticia
+noticecategory.edit: Editar Categoría de Noticia
+noticecategory.save: Guardar Cambios
+noticecategory.delete: Eliminar Categoría de Noticia
+noticecategory.name: Nombre
+noticecategory.createdAt: Registrado
+noticecategory.updatedAt: Última Actualización

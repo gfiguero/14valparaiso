@@ -1,0 +1,27 @@
+document: Documentos
+document.category: Categorías
+
+document.index: Lista de Documentos
+document.list: Lista de Documentos
+document.new: Nuevo Integrante
+document.register: Registrar Integrante
+document.show: Ver Integrante
+document.edit: Editar Integrante
+document.save: Guardar Cambios
+document.delete: Eliminar Integrante
+document.name: Nombre
+document.createdAt: Registrado
+document.updatedAt: Última Actualización
+
+documentcategory.index: Lista de Categorías de Documentos
+documentcategory.list: Lista de Categorías de Documentos
+documentcategory.new: Nueva Categoría de Integrante
+documentcategory.register: Registrar Categoría de Integrante
+documentcategory.show: Ver Categoría de Integrante
+documentcategory.edit: Editar Categoría de Integrante
+documentcategory.save: Guardar Cambios
+documentcategory.delete: Eliminar Categoría de Integrante
+documentcategory.name: Nombre
+documentcategory.createdAt: Registrado
+documentcategory.updatedAt: Última Actualización
+

@@ -1,0 +1,19 @@
+unisystem_user_security:
+    resource: "@UnisystemUserBundle/Resources/config/routing/security.yml"
+
+unisystem_user_profile:
+    resource: "@UnisystemUserBundle/Resources/config/routing/profile.yml"
+    prefix: /profile
+
+unisystem_user_register:
+    resource: "@UnisystemUserBundle/Resources/config/routing/registration.yml"
+    prefix: /register
+
+unisystem_user_resetting:
+    resource: "@UnisystemUserBundle/Resources/config/routing/resetting.yml"
+    prefix: /resetting
+
+unisystem_user_change_password:
+    resource: "@UnisystemUserBundle/Resources/config/routing/change_password.yml"
+    prefix: /profile
+

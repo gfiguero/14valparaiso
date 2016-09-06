@@ -1,0 +1,35 @@
+{% extends ":User:base.html.twig" %}
+
+{% trans_default_domain 'UnisystemUserBundle' %}
+
+{% block title %}{{ 'resetting.request.title'|trans({}, 'UnisystemUserBundle') }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <h1 class="page-header">{{ 'resetting.request.title'|trans({}, 'UnisystemUserBundle') }}</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ 'resetting.request.title'|trans({}, 'UnisystemUserBundle') }}</div>
+                <div class="panel-body">
+                    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                        <div class="form-group">
+                            {% if invalid_username is defined %}
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'UnisystemUserBundle') }}
+                                </div>
+                            {% endif %}
+                            <input class="form-control text-center" type="text" id="username" name="username" required="required"  placeholder="{{ 'resetting.request.username'|trans({}, 'UnisystemUserBundle') }}" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">{{ icon('envelope') }}&nbsp;{{ 'resetting.request.submit'|trans({}, 'UnisystemUserBundle') }}</button>
+                    </form>
+                </div>
+                <div class="panel-footer"><a href="{{ path("fos_user_security_login") }}">{{ 'resetting.request.back'|trans({}, 'UnisystemUserBundle') }}</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,8 @@
+unisystem_document_document:
+    resource: "@UnisystemDocumentBundle/Resources/config/routing/document.yml"
+    prefix:   /document
+
+unisystem_document_category:
+    resource: "@UnisystemDocumentBundle/Resources/config/routing/documentcategory.yml"
+    prefix:   /category
+

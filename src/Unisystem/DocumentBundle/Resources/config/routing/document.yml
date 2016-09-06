@@ -1,0 +1,24 @@
+document_index:
+    path:     /
+    defaults: { _controller: "UnisystemDocumentBundle:Document:index" }
+    methods:  GET
+
+document_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemDocumentBundle:Document:show" }
+    methods:  GET
+
+document_new:
+    path:     /new
+    defaults: { _controller: "UnisystemDocumentBundle:Document:new" }
+    methods:  [GET, POST]
+
+document_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemDocumentBundle:Document:edit" }
+    methods:  [GET, POST]
+
+document_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemDocumentBundle:Document:delete" }
+    methods:  DELETE

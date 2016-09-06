@@ -1,0 +1,11 @@
+frontpage:
+    member:
+        link: Integrantes
+    academy:
+        link: Academia
+    equipment:
+        link: Material Mayor
+    history:
+        link: Historia
+    admin:
+        link: Administración

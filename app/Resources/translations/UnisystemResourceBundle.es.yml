@@ -1,0 +1,27 @@
+resource:
+    menu:
+        root: Material mayor
+        list: Lista de material mayor
+    new:
+        link: Registrar material mayor
+        title: Registro de material mayor
+        confirm: Confirmar Registro
+        flash: Nuevo material mayor registrado
+    list:
+        link: Lista de material mayor
+        title: Lista de material mayor
+    edit:
+        link: Editar material mayor
+        title: Edición de material mayor
+        confirm: Guardar cambios
+        flash: El material mayor ha sido editado satistactoriamente
+    delete:
+        link: Eliminar material mayor
+        title: Eliminación de material mayor
+        message: Los datos del material mayor no podrán ser recuperados
+        confirm: Confirmar eliminación
+        flash: El material mayor ha sido eliminado
+    form:
+        photography: Foto
+        name: Nombre
+        actions: Acciones

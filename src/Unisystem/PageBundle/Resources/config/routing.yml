@@ -1,0 +1,19 @@
+unisystem_page_page:
+    resource: "@UnisystemPageBundle/Resources/config/routing/page.yml"
+    prefix:   /page
+
+unisystem_page_photography:
+    resource: "@UnisystemPageBundle/Resources/config/routing/pagephotography.yml"
+    prefix:   /photography
+
+unisystem_page_process:
+    resource: "@UnisystemPageBundle/Resources/config/routing/pageprocess.yml"
+    prefix:   /process
+
+unisystem_page_publication:
+    resource: "@UnisystemPageBundle/Resources/config/routing/pagepublication.yml"
+    prefix:   /publication
+
+unisystem_page_service:
+    resource: "@UnisystemPageBundle/Resources/config/routing/pageservice.yml"
+    prefix:   /service

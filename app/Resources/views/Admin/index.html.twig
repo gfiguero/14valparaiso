@@ -1,0 +1,94 @@
+{% extends ':Cat:base.html.twig' %}
+
+{% block stylesheet %}{% endblock %}
+
+{% block body %}
+
+    <div class="col-md-3">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <fieldset>
+                        <legend>{{ 'catalog.filter'|trans }}</legend>
+{#}
+                        {{ form_start(form, { 'style': 'horizontal', 'col_size': 'sm', 'label_col': 4, 'widget_col': 8, 'attr': {'id': 'filter'} }) }}
+                            {{ form_widget(form) }}
+                            <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
+                                <button id="sendFilter" type="button" class="btn btn-primary">{{ icon('save') }}&nbsp;{{ 'filter.send.ajax'|trans }}</button>
+                                <button type="submit" class="btn btn-primary">{{ icon('save') }}&nbsp;{{ 'filter.send.post'|trans }}</button>
+                            </div></div>
+                        {{ form_end(form) }}
+{#}
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-3 -->
+    <div class="col-md-9">
+        <div id="response">
+{#}
+            {% for photography in photographies %}
+                <a href="#" data-toggle="modal" data-target="#modal{{ photography.id }}">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 nopadding">
+                        <img class="img-responsive" src="{{ vich_uploader_asset(photography, 'file', 'FotoJoin\\AdminBundle\\Entity\\Photography')|imagine_filter('frontpage_gallery_small') }}" alt="{{ 1 }}" />
+                    </div>
+                </a>
+                <div class="modal fade" id="modal{{ photography.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-9 nopadding">
+                                        <img class="img-responsive" src="{{ vich_uploader_asset(photography, 'file', 'FotoJoin\\AdminBundle\\Entity\\Photography')|imagine_filter('frontpage_gallery_modal') }}" alt="{{ 1 }}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+{#}
+        </div>
+    </div>
+    <!-- /.col-md-3 -->
+
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+
+    function sendFilter(){
+        var $form = $("#filter");
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: $form.serializeObject(),
+            success: function(result) {
+                $.each(result, function(index, value){
+                    $.each(JSON.parse(value),function(index, value){
+                        var list = document.createElement('ul');
+                        $.each(value, function(index, value){
+                            var element = document.createElement('li');
+                            var text = document.createTextNode(index + ' ' + value);
+                            element.appendChild(text);
+                            list.appendChild(element)
+                            console.log(list);
+                        });
+                        var object = document.createElement('div');
+                        object.className = "col-xs-12 col-sm-6 col-md-4 col-lg-3";
+                        object.appendChild(list);
+                        document.getElementById('response').appendChild(object);
+                    });
+                });
+            }
+        });
+    }
+    $(document).ready(function() {
+        document.getElementById('sendFilter').onclick = sendFilter;
+        $('#gallery_categories').multiselect();
+        $('#gallery_authors').multiselect();
+        $('#gallery_places').multiselect();
+    });
+    </script>
+{% endblock %}

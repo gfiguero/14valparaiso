@@ -1,0 +1,30 @@
+process:
+    menu:
+        root: Historia
+
+stage:
+    menu:
+        list: Lista de eventos
+    new:
+        link: Registrar evento
+        title: Registro de evento
+        confirm: Confirmar Registro
+        flash: Nuevo evento registrado
+    list:
+        link: Lista de eventos
+        title: Lista de eventos
+    edit:
+        link: Editar evento
+        title: Edición de evento
+        confirm: Guardar cambios
+        flash: El evento ha sido editado satistactoriamente
+    delete:
+        link: Eliminar evento
+        title: Eliminación de evento
+        message: Los datos del evento no podrán ser recuperados
+        confirm: Confirmar eliminación
+        flash: El evento ha sido eliminado
+    form:
+        photography: Foto
+        name: Nombre
+        actions: Acciones

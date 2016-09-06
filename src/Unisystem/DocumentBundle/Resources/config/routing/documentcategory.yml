@@ -1,0 +1,24 @@
+document_category_index:
+    path:     /
+    defaults: { _controller: "UnisystemDocumentBundle:DocumentCategory:index" }
+    methods:  GET
+
+document_category_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemDocumentBundle:DocumentCategory:show" }
+    methods:  GET
+
+document_category_new:
+    path:     /new
+    defaults: { _controller: "UnisystemDocumentBundle:DocumentCategory:new" }
+    methods:  [GET, POST]
+
+document_category_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemDocumentBundle:DocumentCategory:edit" }
+    methods:  [GET, POST]
+
+document_category_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemDocumentBundle:DocumentCategory:delete" }
+    methods:  DELETE

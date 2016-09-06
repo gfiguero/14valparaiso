@@ -1,0 +1,4 @@
+Unisystem\ProcessBundle\Entity\Stage:
+    file:
+        mapping:           stage
+        filename_property: photography

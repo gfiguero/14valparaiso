@@ -1,0 +1,4 @@
+unisystem_admin_admin_module:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/adminmodule.yml"
+    prefix:   /admin_module
+

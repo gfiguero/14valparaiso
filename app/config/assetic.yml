@@ -1,0 +1,28 @@
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ ]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        less:
+            node: %kernel.root_dir%/../bin/node
+            node_paths: [%kernel.root_dir%/../node_modules]
+            apply_to: "\.less$"
+            formatter: "compressed"
+            preserve_comments: false
+    read_from: %kernel.root_dir%/
+    write_to: %kernel.root_dir%/../web
+    assets:
+        unisystem_css:
+            inputs:
+                - Resources/less/build.less
+            filters:
+                - less
+                - cssrewrite
+            output: css/unisystem.css
+        unisystem_js:
+            inputs: 
+                - Resources/js/custom.js
+            output: js/unisystem.js

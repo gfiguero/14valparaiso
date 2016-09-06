@@ -1,0 +1,17 @@
+page.list: Portadas
+page.photography: Fotos
+page.service: Servicios
+page.process: Procesos
+page.publication: Publicaciones
+
+service.list: Lista de Servicios
+service.new: Nuevo Servicio
+service.name: Nombre del Servicio
+service.createdAt: Registrado
+service.updatedAt: Última Actualización
+
+photography.list: Lista de Fotos de Portada
+
+process.list: Lista de Procesos
+
+publication.list: Lista de Publicaciones

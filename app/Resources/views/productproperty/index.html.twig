@@ -1,0 +1,58 @@
+{% extends ':Admin:base.html.twig' %}
+
+{% block title %}{{ 'productproperty.list.title'|trans({}, 'UnisystemProductBundle') }}{% endblock %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% include ':Admin:icon.html.twig' %}{{ 'productproperty.list.title'|trans({}, 'UnisystemProductBundle') }}</h1>
+                {% include ':Admin:flashbag.html.twig' %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="btn-toolbar">
+                            <a class="btn btn-primary" href="{{ path('product_property_new') }}">{{ icon('file') }}&nbsp;{{ 'productproperty.new.link'|trans({}, 'UnisystemProductBundle') }}</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="records_list table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{{ knp_pagination_sortable(productProperties, 'productproperty.form.name'|trans({}, 'UnisystemProductBundle'), 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(productProperties, 'productproperty.form.createdAt'|trans({}, 'UnisystemProductBundle'), 'createdAt') }}{% if sort == 'createdAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(productProperties, 'productproperty.form.updatedAt'|trans({}, 'UnisystemProductBundle'), 'updatedAt') }}{% if sort == 'updatedAt' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for productProperty in productProperties %}
+                                <tr class='clickableRow' href="{{ path('product_property_show', { 'id': productProperty.id }) }}">
+                                    <td>{% if productProperty.name %}{{ productProperty.name }}{% endif %}</td>
+                                    <td>{% if productProperty.createdAt %}{{ productProperty.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
+                                    <td>{% if productProperty.updatedAt %}{{ productProperty.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd-LLL-Y - HH:mm") }}{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center">
+                            {{ knp_pagination_render(productProperties) }}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}

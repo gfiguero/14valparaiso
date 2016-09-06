@@ -1,0 +1,72 @@
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
+    filter_sets:
+        cache: ~
+        member_photography_small:
+            quality: 75
+            default_image: /uploads/member/BomberoDefault.jpg
+            filters:
+                upscale: { min: [120, 120] }
+                thumbnail: { size: [120, 120], mode: outbound }
+        member_photography_medium:
+            quality: 75
+            default_image: /uploads/member/BomberoDefault.jpg
+            filters:
+                upscale: { min: [500, 500] }
+                thumbnail: { size: [500, 500], mode: outbound }
+        member_photography_large:
+            quality: 75
+            default_image: /uploads/member/BomberoDefault.jpg
+            filters:
+                upscale: { min: [920, 1200] }
+                thumbnail: { size: [920, 1200], mode: outbound }
+
+        resource_photography_small:
+            quality: 75
+            default_image: /uploads/resource/BomberoDefault.jpg
+            filters:
+                upscale: { min: [80, 80] }
+                thumbnail: { size: [80, 80], mode: outbound }
+        resource_photography_medium:
+            quality: 75
+            default_image: /uploads/resource/BomberoDefault.jpg
+            filters:
+                upscale: { min: [500, 500] }
+                thumbnail: { size: [500, 500], mode: outbound }
+        resource_photography_large:
+            quality: 75
+            default_image: /uploads/resource/BomberoDefault.jpg
+            filters:
+                upscale: { min: [920, 1200] }
+                thumbnail: { size: [920, 1200], mode: outbound }
+
+        stage_photography_small:
+            quality: 75
+            default_image: /uploads/process/BomberoDefault.jpg
+            filters:
+                upscale: { min: [80, 80] }
+                thumbnail: { size: [80, 80], mode: outbound }
+        stage_photography_medium:
+            quality: 75
+            default_image: /uploads/process/BomberoDefault.jpg
+            filters:
+                upscale: { min: [500, 500] }
+                thumbnail: { size: [500, 500], mode: outbound }
+        stage_photography_large:
+            quality: 75
+            default_image: /uploads/process/BomberoDefault.jpg
+            filters:
+                upscale: { min: [920, 1200] }
+                thumbnail: { size: [920, 1200], mode: outbound }
+
+        frontpage_gallery_modal:
+            quality: 75
+            default_image: /uploads/photography/default.jpg
+            filters:
+                thumbnail: { size: [1280, 1280], mode: inset }
+                watermark:
+                    image: ../web/uploads/photography/watermark.png
+                    size: 0.5
+                    position: center

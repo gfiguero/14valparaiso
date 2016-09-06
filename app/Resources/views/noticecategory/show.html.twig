@@ -1,0 +1,65 @@
+{% extends ':Admin:base.html.twig' %}
+
+{% block title %}{{ 'noticecategory.show.title'|trans({}, 'UnisystemNoticeBundle') }}{% endblock %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% include ':Admin:icon.html.twig' %}{{ 'noticecategory.show.title'|trans({}, 'UnisystemNoticeBundle') }}</h1>
+                {% include ':Admin:flashbag.html.twig' %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                                        
+                    <div class="panel-heading">
+                        <div class="btn-toolbar">
+                            <a type="button" class="btn btn-default" href="{{ path('notice_category_index') }}">{{ icon('list') }}&nbsp;{{ 'noticecategory.list.link'|trans({}, 'UnisystemNoticeBundle') }}</a>
+                            <a type="button" class="btn btn-warning" href="{{ path('notice_category_edit', { 'id': noticeCategory.id }) }}">{{ icon('pencil') }}&nbsp;{{ 'noticecategory.edit.link'|trans({}, 'UnisystemNoticeBundle') }}</a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirm">{{ icon('trash-o') }}&nbsp;{{ 'noticecategory.delete.link'|trans({}, 'UnisystemNoticeBundle') }}</button>
+                            <div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">{{ 'noticecategory.delete.title'|trans({}, 'UnisystemNoticeBundle') }}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                            <div class="col-xs-10"><p>{{ 'noticecategory.delete.message'|trans({}, 'UnisystemNoticeBundle') }}</p></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="pull-right" style="height:34px;">
+                                                {{ form_start(delete_form) }}
+                                                    <button type="submit" class="btn btn-danger">{{ icon('trash-o') }}&nbsp;{{ 'noticecategory.delete.submit'|trans({}, 'UnisystemNoticeBundle') }}</button>
+                                                {{ form_end(delete_form) }}</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="panel-body">
+                        <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
+                                <dt>{{ 'noticecategory.name'|trans({}, 'UnisystemNoticeBundle') }}</dt>
+                                    <dd>{% if noticeCategory.name %}{{ noticeCategory.name }}{% endif %}</dd>
+                                <dt>{{ 'noticecategory.createdAt'|trans({}, 'UnisystemNoticeBundle') }}</dt>
+                                    <dd>{% if noticeCategory.createdAt %}{{ noticeCategory.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                                <dt>{{ 'noticecategory.updatedAt'|trans({}, 'UnisystemNoticeBundle') }}</dt>
+                                    <dd>{% if noticeCategory.updatedAt %}{{ noticeCategory.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
+

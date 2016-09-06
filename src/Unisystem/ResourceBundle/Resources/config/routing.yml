@@ -1,0 +1,3 @@
+unisystem_resource_resource:
+    resource: "@UnisystemResourceBundle/Resources/config/routing/resource.yml"
+    prefix:   /resource

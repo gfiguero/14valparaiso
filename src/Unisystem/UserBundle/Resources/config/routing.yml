@@ -1,0 +1,4 @@
+unisystem_user_list:
+    resource: "@UnisystemUserBundle/Resources/config/routing/user.yml"
+    prefix:   /
+

@@ -1,0 +1,4 @@
+services:
+#    unisystem_document.example:
+#        class: Unisystem\DocumentBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,118 @@
+user:
+    menu:
+        group: 'Usuarios'
+    form:
+        name: 'Nombre'
+        createdAt: 'Registrado'
+        updatedAt: 'Última Actualización'
+    list:
+        title: 'Lista de Usuarios'
+        link: 'Lista de Usuarios'
+    new:
+        title: 'Nuevo Usuario'
+        link: 'Nuevo Usuario'
+        submit: 'Registrar Usuario'
+    register:
+        title: 'Formulario de Registro'
+        link: 'Formulario de Registro'
+        submit: 'Registrar'
+    show:
+        title: 'Ver Usuario'
+        link: 'Ver Usuario'
+    edit:
+        title: 'Editar Usuario'
+        link: 'Editar Usuario'
+        submit: 'Guardar Cambios'
+    delete:
+        title: 'Eliminar Usuario'
+        link: 'Eliminar Usuario'
+        message: 'El usuario será eliminado y los datos no podrán ser recuperados.'
+        submit: 'Confirmar Eliminación'
+    flash:
+        updated: 'El usuario ha sido actualizado'
+        created: 'El usuario ha sido creado'
+        deleted: 'El usuario ha sido borrado'
+group:
+    edit:
+        submit: 'Actualizar grupo'
+    show:
+        name: 'Nombre de grupo'
+    new:
+        submit: 'Crear grupo'
+    flash:
+        updated: 'El grupo ha sido actualizado'
+        created: 'El grupo ha sido creado'
+        deleted: 'El grupo ha sido borrado'
+security:
+    login:
+        title: 'Ingreso de Usuarios'
+        link: 'Login'
+        username: 'Nombre de usuario'
+        password: 'Contraseña'
+        remember_me: 'Recordar Contraseña'
+        submit: 'Entrar'
+    logout:
+        link: 'Logout'
+profile:
+    show:
+        title: 'Perfil de Usuario'
+        link: 'Perfil'
+        username: 'Nombre de usuario'
+        email: 'Email'
+    edit:
+        title: 'Editar Perfil de Usuario'
+        link: 'Editar Perfil'
+        submit: 'Actualizar Perfil'
+    flash:
+        updated: 'El perfil ha sido actualizado'
+change_password:
+    title: 'Cambio de contraseña'
+    link: 'Cambiar contraseña'
+    submit: 'Cambiar contraseña'
+    flash:
+        success: 'La contraseña se ha cambiado con éxito'
+registration:
+    link: 'Registrar nuevo usuario'
+    title: 'Formulario de Registro'
+    check_email: "Se ha enviado un email a %email%.\n\nContiene un enlace de activación que debes presionar para activar tu cuenta."
+    confirmed:
+        title: 'Cuenta Confirmada'
+        message: "Felicidades %name%, tu cuenta %username% está ahora confirmada."
+    back: 'Volver a la página original.'
+    submit: Registrar
+    flash:
+        user_created: 'El usuario se ha creado satisfactoriamente'
+    email:
+        subject: 'Bienvenido %username%!'
+        message: "Hola %username%!\n\nPara completar la validación de tu cuenta - por favor visita %confirmationUrl%\n\nAtentamente,\nel Equipo.\n"
+resetting:
+    password_already_requested: 'La contraseña para este usuario ya ha sido solicitada dentro de las 24 horas.'
+    check_email: 'Un email ha sido enviado a %email%. Contiene un enlace de activación que debes presionar para restablecer tu contraseña.'
+    request:
+        title: 'Recuperar contraseña'
+        invalid_username: 'El usuario o dirección de correo "%username%" no existe.'
+        username: 'Nombre de usuario'
+        submit: 'Recuperar contraseña'
+        back: 'Volver a ingreso de usuarios'
+    reset:
+        request: 'Recuperar Contraseña'
+        submit: 'Cambiar contraseña'
+    flash:
+        success: 'La contraseña se ha cambiado con éxito'
+    email:
+        subject: 'Restablecer Contraseña'
+        message: "Hola %username%!\n\nPara restablecer tu contraseña - por favor visita %confirmationUrl%\n\nAtentamente,\nel Equipo.\n"
+layout:
+    logout: Salir
+    login: Entrar
+    register: Registrar
+    logged_in_as: 'Identificado como %username%'
+form:
+    group_name: 'Nombre de grupo'
+    username: 'Nombre de usuario'
+    email: Email
+    current_password: 'Contraseña actual'
+    password: Contraseña
+    password_confirmation: 'Repita la contraseña'
+    new_password: 'Nueva contraseña'
+    new_password_confirmation: 'Repita la contraseña'

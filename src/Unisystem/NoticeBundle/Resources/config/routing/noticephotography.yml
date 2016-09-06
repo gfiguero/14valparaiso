@@ -1,0 +1,24 @@
+notice_photography_index:
+    path:     /
+    defaults: { _controller: "UnisystemNoticeBundle:NoticePhotography:index" }
+    methods:  GET
+
+notice_photography_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemNoticeBundle:NoticePhotography:show" }
+    methods:  GET
+
+notice_photography_new:
+    path:     /new
+    defaults: { _controller: "UnisystemNoticeBundle:NoticePhotography:new" }
+    methods:  [GET, POST]
+
+notice_photography_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemNoticeBundle:NoticePhotography:edit" }
+    methods:  [GET, POST]
+
+notice_photography_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemNoticeBundle:NoticePhotography:delete" }
+    methods:  DELETE

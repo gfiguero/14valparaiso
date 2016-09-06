@@ -1,0 +1,26 @@
+{% extends ":User:base.html.twig" %}
+
+{% trans_default_domain 'UnisystemUserBundle' %}
+
+{% block title %}{{ 'resetting.reset.title'|trans({}, 'UnisystemUserBundle') }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <h1 class="page-header">{{ 'resetting.reset.title'|trans({}, 'UnisystemUserBundle') }}</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ 'resetting.reset.title'|trans({}, 'UnisystemUserBundle') }}</div>
+                <div class="panel-body">
+                    {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-primary btn-block">{{ icon('save') }}&nbsp;{{ 'resetting.reset.submit'|trans({}, 'UnisystemUserBundle') }}</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
