@@ -3,5 +3,37 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>Material Mayor</h1>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                {% for resource in resources %}
+                    <div class="media">
+                        {% if loop.index is odd %}
+                            <div class="media-left">
+                                <a href="#"><img class="img-rounded media-object" src="{{ vich_uploader_asset(resource, 'file')|imagine_filter('resource_photography_medium') }}" alt="..."></a>
+                            </div>
+                            <div class="media-body">
+                                {% if resource.name %}<h4 class="media-heading">{{ resource.name }}</h4>{% endif %}
+                                {% if resource.description %}{{ resource.description }}{% endif %}
+                            </div>
+                        {% else %}
+                            <div class="media-body">
+                                {% if resource.name %}<h4 class="media-heading">{{ resource.name }}</h4>{% endif %}
+                                {% if resource.description %}{{ resource.description }}{% endif %}
+                            </div>
+                            <div class="media-right">
+                                <a href="#"><img class="img-rounded media-object" src="{{ vich_uploader_asset(resource, 'file')|imagine_filter('resource_photography_medium') }}" alt="..."></a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

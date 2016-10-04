@@ -15,8 +15,7 @@ class HistoryController extends Controller
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $histories = $em->getRepository('UnisystemAdminBundle:History')->findBy(array(), array($sort => $direction));
-        else $histories = $em->getRepository('UnisystemAdminBundle:History')->findAll();
+        $histories = $em->getRepository('UnisystemAdminBundle:History')->getAdminList($sort, $direction);
         $paginator = $this->get('knp_paginator');
         $histories = $paginator->paginate($histories, $request->query->getInt('page', 1), 24);
 

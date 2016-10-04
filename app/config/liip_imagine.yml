@@ -25,38 +25,32 @@ liip_imagine:
 
         resource_photography_small:
             quality: 75
-            default_image: /uploads/resource/BomberoDefault.jpg
             filters:
                 upscale: { min: [80, 80] }
                 thumbnail: { size: [80, 80], mode: outbound }
         resource_photography_medium:
             quality: 75
-            default_image: /uploads/resource/BomberoDefault.jpg
             filters:
-                upscale: { min: [500, 500] }
-                thumbnail: { size: [500, 500], mode: outbound }
+                upscale: { min: [300, 300] }
+                thumbnail: { size: [300, 300], mode: outbound }
         resource_photography_large:
             quality: 75
-            default_image: /uploads/resource/BomberoDefault.jpg
             filters:
                 upscale: { min: [920, 1200] }
                 thumbnail: { size: [920, 1200], mode: outbound }
 
-        stage_photography_small:
+        history_photography_small:
             quality: 75
-            default_image: /uploads/process/BomberoDefault.jpg
             filters:
                 upscale: { min: [80, 80] }
                 thumbnail: { size: [80, 80], mode: outbound }
-        stage_photography_medium:
+        history_photography_medium:
             quality: 75
-            default_image: /uploads/process/BomberoDefault.jpg
             filters:
                 upscale: { min: [500, 500] }
                 thumbnail: { size: [500, 500], mode: outbound }
-        stage_photography_large:
+        history_photography_large:
             quality: 75
-            default_image: /uploads/process/BomberoDefault.jpg
             filters:
                 upscale: { min: [920, 1200] }
                 thumbnail: { size: [920, 1200], mode: outbound }

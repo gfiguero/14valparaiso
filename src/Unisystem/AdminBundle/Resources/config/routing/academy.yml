@@ -1,0 +1,29 @@
+academy_future:
+    path:     /future
+    defaults: { _controller: "UnisystemAdminBundle:Academy:index" }
+    methods:  GET
+
+academy_past:
+    path:     /past
+    defaults: { _controller: "UnisystemAdminBundle:Academy:index" }
+    methods:  GET
+
+academy_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemAdminBundle:Academy:show" }
+    methods:  GET
+
+academy_new:
+    path:     /new
+    defaults: { _controller: "UnisystemAdminBundle:Academy:new" }
+    methods:  [GET, POST]
+
+academy_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemAdminBundle:Academy:edit" }
+    methods:  [GET, POST]
+
+academy_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemAdminBundle:Academy:delete" }
+    methods:  DELETE

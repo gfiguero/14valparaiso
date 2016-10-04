@@ -19,6 +19,6 @@ vich_uploader:
             namer: vich_uploader.namer_origname
         history:
             uri_prefix: uploads/history
-            upload_destination: %kernel.root_dir%/../web/uploads/process
+            upload_destination: %kernel.root_dir%/../web/uploads/history
             namer: vich_uploader.namer_origname
 

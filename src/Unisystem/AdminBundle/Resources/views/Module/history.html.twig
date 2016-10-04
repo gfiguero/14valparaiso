@@ -39,16 +39,18 @@
                         <table class="records_list table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th>{{ knp_pagination_sortable(histories, 'academy.form.date'|trans({}, 'UnisystemAdminBundle'), 'date') }}{% if sort == 'date' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(histories, 'history.form.title'|trans({}, 'UnisystemAdminBundle'), 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ 'history.form.photography'|trans({}, 'UnisystemAdminBundle') }}</th>
-                                    <th>{{ knp_pagination_sortable(histories, 'history.form.name'|trans({}, 'UnisystemAdminBundle'), 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ 'history.form.actions'|trans({}, 'UnisystemAdminBundle') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
                             {% for key, history in histories %}
                                 <tr>
-                                    <td>{% if history.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(history, 'file', 'Unisystem\\ProcessBundle\\Entity\\Stage')|imagine_filter('history_photography_small') }}" alt="{{ 1 }}" />{% endif %}</td>
-                                    <td>{% if history.name %}{{ history.name }}{% endif %}</td>
+                                    <td>{% if history.date %}{{ history.date|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}{% endif %}</td>
+                                    <td>{% if history.title %}{{ history.title }}{% endif %}</td>
+                                    <td>{% if history.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(history, 'file')|imagine_filter('history_photography_small') }}" alt="{{ 1 }}" />{% endif %}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit{{ history.id }}">{{ icon('edit fa-fw') }}{{ 'history.edit.link'|trans({}, 'UnisystemAdminBundle') }}</button>
                                         <div class="modal fade" id="modalEdit{{ history.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

@@ -39,7 +39,7 @@ class ProfileController extends BaseController
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        return $this->render(':Profile:show.html.twig', array(
+        return $this->render('UnisystemUserBundle:Profile:show.html.twig', array(
             'user' => $user
         ));
     }
@@ -91,7 +91,7 @@ class ProfileController extends BaseController
             return $response;
         }
 
-        return $this->render(':Profile:edit.html.twig', array(
+        return $this->render('UnisystemUserBundle:Profile:edit.html.twig', array(
             'form' => $form->createView()
         ));
     }

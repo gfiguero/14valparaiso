@@ -65,9 +65,14 @@ class Builder implements ContainerAwareInterface
         $sidemenu['resource.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['resource.sidemenu.root']->addChild('resource.sidemenu.index', array('route' => 'resource_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $sidemenu->addChild('process.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
-        $sidemenu['process.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
-        $sidemenu['process.sidemenu.root']->addChild('process.sidemenu.index', array('route' => 'history_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu->addChild('history.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['history.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['history.sidemenu.root']->addChild('history.sidemenu.index', array('route' => 'history_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+
+        $sidemenu->addChild('academy.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['academy.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['academy.sidemenu.root']->addChild('academy.sidemenu.future', array('route' => 'academy_future'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['academy.sidemenu.root']->addChild('academy.sidemenu.past', array('route' => 'academy_past'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
 //        $menu->addChild('document.menu')->setAttribute('icon', 'file fa-fw')->setAttribute('translation_domain', 'UnisystemDocumentBundle');
 //        $menu['document.menu']->setChildrenAttribute('class', 'nav nav-second-level collapse');

@@ -71,7 +71,7 @@ class RegistrationController extends BaseController
             return $response;
         }
 
-        return $this->render(':Registration:register.html.twig', array(
+        return $this->render('UnisystemUserBundle:Registration:register.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -89,7 +89,7 @@ class RegistrationController extends BaseController
             throw new NotFoundHttpException(sprintf('The user with email "%s" does not exist', $email));
         }
 
-        return $this->render(':Registration:checkEmail.html.twig', array(
+        return $this->render('UnisystemUserBundle:Registration:checkEmail.html.twig', array(
             'user' => $user,
         ));
     }
@@ -139,7 +139,7 @@ class RegistrationController extends BaseController
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        return $this->render(':Registration:confirmed.html.twig', array(
+        return $this->render('UnisystemUserBundle:Registration:confirmed.html.twig', array(
             'user' => $user,
             'targetUrl' => $this->getTargetUrlFromSession(),
         ));

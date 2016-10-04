@@ -77,7 +77,7 @@ class ChangePasswordController extends BaseController
             return $response;
         }
 
-        return $this->render(':ChangePassword:changePassword.html.twig', array(
+        return $this->render('UnisystemUserBundle:ChangePassword:changePassword.html.twig', array(
             'form' => $form->createView()
         ));
     }

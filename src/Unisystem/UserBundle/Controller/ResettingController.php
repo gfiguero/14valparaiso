@@ -26,7 +26,7 @@ class ResettingController extends BaseController
      */
     public function requestAction()
     {
-        return $this->render(':Resetting:request.html.twig');
+        return $this->render('UnisystemUserBundle:Resetting:request.html.twig');
     }
 
     /**
@@ -40,13 +40,13 @@ class ResettingController extends BaseController
         $user = $this->get('fos_user.user_manager')->findUserByUsernameOrEmail($username);
 
         if (null === $user) {
-            return $this->render(':Resetting:request.html.twig', array(
+            return $this->render('UnisystemUserBundle:Resetting:request.html.twig', array(
                 'invalid_username' => $username
             ));
         }
 
         if ($user->isPasswordRequestNonExpired($this->container->getParameter('fos_user.resetting.token_ttl'))) {
-            return $this->render(':Resetting:passwordAlreadyRequested.html.twig');
+            return $this->render('UnisystemUserBundle:Resetting:passwordAlreadyRequested.html.twig');
         }
 
         if (null === $user->getConfirmationToken()) {
@@ -76,7 +76,7 @@ class ResettingController extends BaseController
             return new RedirectResponse($this->generateUrl('fos_user_resetting_request'));
         }
 
-        return $this->render(':Resetting:checkEmail.html.twig', array(
+        return $this->render('UnisystemUserBundle:Resetting:checkEmail.html.twig', array(
             'email' => $email,
         ));
     }
@@ -127,7 +127,7 @@ class ResettingController extends BaseController
             return $response;
         }
 
-        return $this->render(':Resetting:reset.html.twig', array(
+        return $this->render('UnisystemUserBundle:Resetting:reset.html.twig', array(
             'token' => $token,
             'form' => $form->createView(),
         ));

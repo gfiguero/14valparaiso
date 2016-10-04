@@ -196,33 +196,5 @@ class Academy
     {
         return $this->deletedAt;
     }
-    /**
-     * @var string
-     */
-    private $place;
-
-
-    /**
-     * Set place
-     *
-     * @param string $place
-     *
-     * @return Academy
-     */
-    public function setPlace($place)
-    {
-        $this->place = $place;
-
-        return $this;
-    }
-
-    /**
-     * Get place
-     *
-     * @return string
-     */
-    public function getPlace()
-    {
-        return $this->place;
-    }
 }
+

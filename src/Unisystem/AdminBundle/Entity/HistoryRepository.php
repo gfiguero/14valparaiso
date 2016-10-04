@@ -10,4 +10,29 @@ namespace Unisystem\AdminBundle\Entity;
  */
 class HistoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAdminList($sort = null, $direction = null)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb ->select('h')
+            ->from('UnisystemAdminBundle:History', 'h')
+        ;
+
+        if($sort && $direction)
+        {
+            $sort = 'h.'.$sort;
+            $qb ->orderBy($sort, $direction);
+        }
+
+        return $qb->getQuery()->getResult();        
+    }
+
+    public function getFrontpageList()
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('h')
+            ->from('UnisystemAdminBundle:History', 'h')
+            ->orderBy('h.date', 'ASC')
+        ;
+        return $qb->getQuery()->getResult();
+    }
 }

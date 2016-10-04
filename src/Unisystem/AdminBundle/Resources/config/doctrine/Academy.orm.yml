@@ -19,6 +19,10 @@ Unisystem\AdminBundle\Entity\Academy:
         schedule:
             type: datetime
             nullable: true
+        place:
+            type: string
+            length: 300
+            nullable: true
         createdAt:
             type: datetime
             gedmo:

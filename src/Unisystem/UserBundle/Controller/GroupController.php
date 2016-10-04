@@ -37,7 +37,7 @@ class GroupController extends BaseController
     {
         $groups = $this->get('fos_user.group_manager')->findGroups();
 
-        return $this->render(':Group:list.html.twig', array(
+        return $this->render('UnisystemUserBundle:Group:list.html.twig', array(
             'groups' => $groups
         ));
     }
@@ -49,7 +49,7 @@ class GroupController extends BaseController
     {
         $group = $this->findGroupBy('name', $groupName);
 
-        return $this->render(':Group:show.html.twig', array(
+        return $this->render('UnisystemUserBundle:Group:show.html.twig', array(
             'group' => $group
         ));
     }
@@ -98,7 +98,7 @@ class GroupController extends BaseController
             return $response;
         }
 
-        return $this->render(':Group:edit.html.twig', array(
+        return $this->render('UnisystemUserBundle:Group:edit.html.twig', array(
             'form'      => $form->createview(),
             'group_name'  => $group->getName(),
         ));
@@ -141,7 +141,7 @@ class GroupController extends BaseController
             return $response;
         }
 
-        return $this->render(':Group:new.html.twig', array(
+        return $this->render('UnisystemUserBundle:Group:new.html.twig', array(
             'form' => $form->createview(),
         ));
     }

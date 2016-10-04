@@ -9,16 +9,19 @@ Unisystem\AdminBundle\Entity\History:
             generator:
                 strategy: AUTO
     fields:
+        title:
+            type: string
+            length: 300
+            nullable: true
+        content:
+            type: text
+            nullable: true
+        date:
+            type: date
+            nullable: true
         photography:
             type: string
             length: 300
-            nullable: true
-        name:
-            type: string
-            length: 300
-            nullable: true
-        description:
-            type: text
             nullable: true
         createdAt:
             type: datetime

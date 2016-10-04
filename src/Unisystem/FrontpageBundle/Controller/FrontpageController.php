@@ -24,7 +24,7 @@ class FrontpageController extends Controller
     public function academyAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $academies = $em->getRepository('UnisystemAdminBundle:Academy')->getFrontpageList();
+        $academies = $em->getRepository('UnisystemAdminBundle:Academy')->getFutureList();
 
         return $this->render('UnisystemFrontpageBundle:Page:academy.html.twig', array(
             'academies' => $academies,
@@ -43,6 +43,11 @@ class FrontpageController extends Controller
 
     public function historyAction()
     {
-        return $this->render('UnisystemFrontpageBundle:Page:history.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $histories = $em->getRepository('UnisystemAdminBundle:History')->getFrontpageList();
+
+        return $this->render('UnisystemFrontpageBundle:Page:history.html.twig', array(
+            'histories' => $histories,
+        ));
     }
 }

@@ -19,4 +19,37 @@ class AcademyRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getResult();
     }
+    public function getFutureList($sort = null, $direction = null)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('a')
+            ->from('UnisystemAdminBundle:Academy', 'a')
+            ->where('a.schedule > :datetime')
+            ->setParameter('datetime', new \DateTime());
+
+        if($sort && $direction)
+        {
+            $sort = 'a.'.$sort;
+            $qb ->orderBy($sort, $direction);
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+    public function getPastList($sort = null, $direction = null)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('a')
+            ->from('UnisystemAdminBundle:Academy', 'a')
+            ->where('a.schedule < :datetime')
+            ->setParameter('datetime', new \DateTime());
+
+        if($sort && $direction)
+        {
+            $sort = 'a.'.$sort;
+            $qb ->orderBy($sort, $direction);
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+
 }

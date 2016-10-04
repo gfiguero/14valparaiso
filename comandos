@@ -17,6 +17,7 @@ php app/console doctrine:generate:entities UnisystemAdminBundle:MemberRole --pat
 php app/console doctrine:generate:entities UnisystemAdminBundle:MemberCourse --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:History --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:Academy --path=src
 
 php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
 

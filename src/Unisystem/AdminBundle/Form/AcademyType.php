@@ -5,8 +5,9 @@ namespace Unisystem\AdminBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use \DateTime;
 
-class HistoryType extends AbstractType
+class AcademyType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,36 +16,40 @@ class HistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array(
-                'label' => 'stage.form.title',
+            ->add('name', null, array(
+                'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'label' => 'resource.form.name',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
             ))
-            ->add('content', null, array( 
-                'label' => 'stage.form.content',
+            ->add('place', null, array(
+                'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'label' => 'resource.form.place',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
-            ))
-            ->add('date', null, array( 
-                'label' => 'stage.form.date',
+            )) 
+            ->add('schedule', null, array(
+                'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'label' => 'resource.form.schedule',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
-            ))
-            ->add('file', 'fileinput', array(
-                'label' => 'stage.form.photography',
+            )) 
+            ->add('description', null, array( 
+                'label' => 'resource.form.description',
                 'translation_domain' => 'UnisystemAdminBundle',
+                'attr' => array( 'class' => 'switch', 'label_col' => 3, 'widget_col' => 9 ),
                 'required' => false,
-            ))
+            )) 
         ;
     }
-
+    
     /**
      * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Unisystem\AdminBundle\Entity\History'
+            'data_class' => 'Unisystem\AdminBundle\Entity\Academy'
         ));
     }
 }

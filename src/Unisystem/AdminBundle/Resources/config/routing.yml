@@ -17,3 +17,7 @@ unisystem_admin_history:
 unisystem_admin_resource:
     resource: "@UnisystemAdminBundle/Resources/config/routing/resource.yml"
     prefix:   /resource/index
+
+unisystem_admin_academy:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/academy.yml"
+    prefix:   /academy/index
