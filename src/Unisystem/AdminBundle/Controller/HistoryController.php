@@ -100,14 +100,9 @@ class HistoryController extends Controller
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'history.edit.flash' );    
 
-            return $this->redirect($request->headers->get('referer'));
         }
 
-        return $this->render('history/edit.html.twig', array(
-            'history' => $history,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->redirect($request->headers->get('referer'));
     }
 
     /**
