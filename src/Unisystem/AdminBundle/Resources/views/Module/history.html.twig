@@ -1,0 +1,141 @@
+{% extends 'UnisystemAdminBundle:Admin:base.html.twig' %}
+
+{% block title %}{{ 'history.list.title'|trans({}, 'UnisystemAdminBundle') }}{% endblock %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% include 'UnisystemAdminBundle:Admin:icon.html.twig' %}{{ 'history.list.title'|trans({}, 'UnisystemAdminBundle') }}</h1>
+                {% include 'UnisystemAdminBundle:Admin:flashbag.html.twig' %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNew">{{ icon('plus fa-fw') }}{{ 'history.new.link'|trans({}, 'UnisystemAdminBundle') }}</button>
+                    </div>
+                    <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">{{ 'history.new.title'|trans({}, 'UnisystemAdminBundle') }}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{ form_start(newForm) }}
+                                        {{ form_widget(newForm) }}
+                                        <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'history.new.confirm'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                    {{ form_end(newForm) }}
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="records_list table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{{ 'history.form.photography'|trans({}, 'UnisystemAdminBundle') }}</th>
+                                    <th>{{ knp_pagination_sortable(histories, 'history.form.name'|trans({}, 'UnisystemAdminBundle'), 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ 'history.form.actions'|trans({}, 'UnisystemAdminBundle') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for key, history in histories %}
+                                <tr>
+                                    <td>{% if history.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(history, 'file', 'Unisystem\\ProcessBundle\\Entity\\Stage')|imagine_filter('history_photography_small') }}" alt="{{ 1 }}" />{% endif %}</td>
+                                    <td>{% if history.name %}{{ history.name }}{% endif %}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit{{ history.id }}">{{ icon('edit fa-fw') }}{{ 'history.edit.link'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                        <div class="modal fade" id="modalEdit{{ history.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">{{ 'history.edit.title'|trans({}, 'UnisystemAdminBundle') }}</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                            {% if history.photography %}
+                                                                <img class="img-responsive img-rounded" src="{{ vich_uploader_asset(history, 'file')|imagine_filter('history_photography_medium') }}" alt="{{ 1 }}" />
+                                                            {% else %}
+                                                                <img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('history_photography_medium') }}" alt="{{ 1 }}" />
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                            {% set editForm = attribute(editForms, key) %}
+                                                            {{ form_start(editForm) }}
+                                                                {{ form_widget(editForm) }}
+                                                                <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'history.edit.confirm'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                                            {{ form_end(editForm) }}
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete{{ history.id }}">{{ icon('times fa-fw') }}{{ 'history.delete.link'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                        <div class="modal fade" id="modalDelete{{ history.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog modal-md" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">{{ 'history.delete.title'|trans({}, 'UnisystemAdminBundle') }}</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                                        <div class="col-xs-10"><p>{{ 'history.delete.message'|trans({}, 'UnisystemAdminBundle') }}</p></div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        {% set deleteForm = attribute(deleteForms, key) %}
+                                                        {{ form_start(deleteForm) }}
+                                                            {{ form_widget(deleteForm) }}
+                                                            <button type="submit" class="btn btn-danger pull-right">{{ icon('times fa-fw') }}{{ 'history.delete.confirm'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                                        {{ form_end(deleteForm) }}
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center">
+                            {{ knp_pagination_render(histories) }}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        var optionsFileinput = {
+            showPreview: false,
+            showRemove: false,
+            showUpload: false,
+            showCancel: false,
+            showClose: false,
+            showZoom: false,
+            browseClass: 'btn btn-primary btn-block',
+            browseLabel: 'Seleccionar Archivo'
+        }
+        $(".fileinput").find('input').fileinput(optionsFileinput);
+    </script>
+{% endblock %}

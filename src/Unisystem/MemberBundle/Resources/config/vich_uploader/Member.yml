@@ -1,4 +1,0 @@
-Unisystem\MemberBundle\Entity\Member:
-    file:
-        mapping:           member
-        filename_property: photography

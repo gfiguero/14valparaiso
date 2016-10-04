@@ -1,3 +1,0 @@
-unisystem_process_stage:
-    resource: "@UnisystemProcessBundle/Resources/config/routing/stage.yml"
-    prefix:   /stage

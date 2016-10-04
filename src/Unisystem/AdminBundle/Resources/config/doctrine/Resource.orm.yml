@@ -1,0 +1,40 @@
+Unisystem\AdminBundle\Entity\Resource:
+    type: entity
+    table: Resource
+    repositoryClass: Unisystem\AdminBundle\Entity\ResourceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        photography:
+            type: string
+            length: 300
+            nullable: true
+        name:
+            type: string
+            length: 300
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        createdAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deletedAt:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
+    lifecycleCallbacks: {  }

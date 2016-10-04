@@ -1,17 +1,151 @@
-page.list: Portadas
-page.photography: Fotos
-page.service: Servicios
-page.process: Procesos
-page.publication: Publicaciones
+frontpage:
+    index:
+        link: Ir a Portada
 
-service.list: Lista de Servicios
-service.new: Nuevo Servicio
-service.name: Nombre del Servicio
-service.createdAt: Registrado
-service.updatedAt: Última Actualización
+member:
+    sidemenu:
+        root: Integrantes
+        index: Lista de Integrantes
+        course: Cursos
+        role: Cargos
+    new:
+        link: Registrar Integrante
+        title: Registro de Integrante
+        confirm: Confirmar Registro
+    index:
+        link: Lista de Integrantes
+        title: Lista de Integrantes
+        actions: Acciones
+    edit:
+        link: Editar Integrante
+        title: Editar Integrante
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar Integrante
+        title: Eliminación de Integrante
+        message: Los datos del integrante no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        edited: Integrante editado satistactoriamente
+    form:
+        photography: Foto
+        name: Nombre
+        code: Código Bombero
+        phone: Número de Contacto
+        email: Correo Electrónico
+        birth_date: Fecha de Nacimiento
+        admission_date: Fecha de Admisión
+        courses: Cursos Realizados
+        role: Cargo Actual
+        previous_roles: Cargos Anteriores
+        enabled: El integrante se encuentra activo
 
-photography.list: Lista de Fotos de Portada
+membercourse:
+    new:
+        link: Registrar Curso
+        title: Registro de Curso
+        confirm: Confirmar Registro
+    index:
+        link: Lista de Cursos
+        title: Lista de Cursos
+        actions: Acciones
+    edit:
+        link: Editar Curso
+        title: Editar Curso
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar Curso
+        title: Eliminación de Curso
+        message: Los datos del curso no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        created: Curso creado satistactoriamente
+        edited: Curso editado satistactoriamente
+        deleted: Curso eliminado
+    form:
+        name: Nombre
+        initials: Nombre Corto
+        rank: Número Ordinal
 
-process.list: Lista de Procesos
+memberrole:
+    new:
+        link: Registrar Cargo
+        title: Registro de Cargo
+        confirm: Confirmar Registro
+    index:
+        link: Lista de Cargos
+        title: Lista de Cargos
+        actions: Acciones
+    edit:
+        link: Editar Cargo
+        title: Editar Cargo
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar Cargo
+        title: Eliminación de Cargo
+        message: Los datos del cargo no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        created: Cargo creado satistactoriamente
+        edited: Cargo editado satistactoriamente
+        deleted: Cargo eliminado
+    form:
+        name: Nombre
+        rank: Número Ordinal
+        officer: Cargo Oficial
 
-publication.list: Lista de Publicaciones
+resource:
+    sidemenu:
+        root: Material mayor
+        index: Lista de material mayor
+    new:
+        link: Registrar nuevo material mayor
+        title: Registrar nuevo material mayor
+        confirm: Confirmar Registro
+    index:
+        link: Lista de material mayor
+        title: Lista de material mayor
+        actions: Acciones
+    edit:
+        link: Editar material mayor
+        title: Editar material mayor
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar material mayor
+        title: Eliminación de material mayor
+        message: Los datos del material mayor no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        created: Material mayor creado satistactoriamente
+        edited: Material mayor editado satistactoriamente
+        deleted: Material mayor eliminado
+    form:
+        name: Nombre
+
+process:
+    sidemenu:
+        root: Historia
+        index: Lista de eventos
+    new:
+        link: Registrar nuevo evento
+        title: Registrar nuevo evento
+        confirm: Confirmar Registro
+    index:
+        link: Lista de eventos
+        title: Lista de eventos
+        actions: Acciones
+    edit:
+        link: Editar evento
+        title: Editar evento
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar evento
+        title: Eliminación de evento
+        message: Los datos del evento no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        created: Evento creado satistactoriamente
+        edited: Evento editado satistactoriamente
+        deleted: Evento eliminado
+    form:
+        name: Nombre

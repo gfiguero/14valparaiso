@@ -1,0 +1,24 @@
+history_index:
+    path:     /
+    defaults: { _controller: "UnisystemAdminBundle:History:index" }
+    methods:  GET
+
+history_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemAdminBundle:History:show" }
+    methods:  GET
+
+history_new:
+    path:     /new
+    defaults: { _controller: "UnisystemAdminBundle:History:new" }
+    methods:  [GET, POST]
+
+history_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemAdminBundle:History:edit" }
+    methods:  [GET, POST]
+
+history_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemAdminBundle:History:delete" }
+    methods:  DELETE

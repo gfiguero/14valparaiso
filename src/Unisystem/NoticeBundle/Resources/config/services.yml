@@ -1,4 +1,0 @@
-services:
-#    unisystem_notice.example:
-#        class: Unisystem\NoticeBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]

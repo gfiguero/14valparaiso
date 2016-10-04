@@ -1,0 +1,64 @@
+Unisystem\AdminBundle\Entity\Member:
+    type: entity
+    table: Member
+    repositoryClass: Unisystem\AdminBundle\Entity\MemberRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        role:
+            targetEntity: Unisystem\AdminBundle\Entity\MemberRole
+    manyToMany:
+        courses:
+            targetEntity: Unisystem\AdminBundle\Entity\MemberCourse
+        previous_roles:
+            targetEntity: Unisystem\AdminBundle\Entity\MemberRole
+    fields:
+        photography:
+            type: string
+            length: 300
+            nullable: true
+        name:
+            type: string
+            length: 300
+            nullable: true
+        code:
+            type: integer
+            nullable: true
+        phone:
+            type: string
+            length: 20
+            nullable: true
+        email:
+            type: string
+            length: 100
+            nullable: true
+        birth_date:
+            type: date
+            nullable: true
+        admission_date:
+            type: date
+            nullable: true
+        enabled:
+            type: boolean
+        createdAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deletedAt:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
+    lifecycleCallbacks: {  }

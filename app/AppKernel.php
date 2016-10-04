@@ -23,17 +23,16 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
-            new Unisystem\PageBundle\UnisystemPageBundle(),
             new Unisystem\UserBundle\UnisystemUserBundle(),
-            new Unisystem\ProductBundle\UnisystemProductBundle(),
-            new Unisystem\MemberBundle\UnisystemMemberBundle(),
-            new Unisystem\NoticeBundle\UnisystemNoticeBundle(),
-            new Unisystem\DocumentBundle\UnisystemDocumentBundle(),
             new Unisystem\AdminBundle\UnisystemAdminBundle(),
             new Unisystem\FrontpageBundle\UnisystemFrontpageBundle(),
-            new Unisystem\ResourceBundle\UnisystemResourceBundle(),
-            new Unisystem\ProcessBundle\UnisystemProcessBundle(),
             new Unisystem\UploadBundle\UnisystemUploadBundle(),
+//            new Unisystem\PageBundle\UnisystemPageBundle(),
+//            new Unisystem\ProductBundle\UnisystemProductBundle(),
+//            new Unisystem\NoticeBundle\UnisystemNoticeBundle(),
+//            new Unisystem\DocumentBundle\UnisystemDocumentBundle(),
+//            new Unisystem\ResourceBundle\UnisystemResourceBundle(),
+//            new Unisystem\ProcessBundle\UnisystemProcessBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

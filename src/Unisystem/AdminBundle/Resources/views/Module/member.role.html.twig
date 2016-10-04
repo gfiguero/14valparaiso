@@ -1,0 +1,124 @@
+{% extends 'UnisystemAdminBundle:Admin:base.html.twig' %}
+
+{% set translation_domain = 'UnisystemAdminBundle' %} 
+{% trans_default_domain translation_domain %}
+
+{% block title %}{{ 'memberrole.index.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% include 'UnisystemAdminBundle:Admin:icon.html.twig' %}{{ 'memberrole.index.title'|trans }}</h1>
+                {% include 'UnisystemAdminBundle:Admin:flashbag.html.twig' %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="btn-toolbar">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNew">{{ icon('plus fa-fw') }}{{ 'memberrole.new.link'|trans }}</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="records_list table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{{ knp_pagination_sortable(memberRoles, 'memberrole.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(memberRoles, 'memberrole.form.rank'|trans, 'rank') }}{% if sort == 'rank' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(memberRoles, 'memberrole.form.officer'|trans, 'officer') }}{% if sort == 'officer' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ 'memberrole.index.actions'|trans }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for key, memberRole in memberRoles %}
+                                <tr>
+                                    <td>{% if memberRole.name %}{{ memberRole.name }}{% endif %}</td>
+                                    <td>{% if memberRole.rank %}{{ memberRole.rank }}{% endif %}</td>
+                                    <td>{% if memberRole.officer %}{{ icon('check fa-fw') }}{% else %}{{ icon('times fa-fw') }}{% endif %}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEdit{{ memberRole.id }}">{{ icon('edit fa-fw') }}{{ 'memberrole.edit.link'|trans }}</button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete{{ memberRole.id }}">{{ icon('times fa-fw') }}{{ 'memberrole.delete.link'|trans }}</button>
+                                    </td>
+                                </tr>
+                                <div class="modal fade" id="modalEdit{{ memberRole.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-sm" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">{{ 'memberrole.edit.title'|trans }}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                {% set editForm = attribute(editForms, key) %}
+                                                {{ form_start(editForm) }}
+                                                    {{ form_widget(editForm) }}
+                                                    <button type="submit" class="btn btn-primary pull-right">{{ icon('check fa-fw') }}{{ 'memberrole.edit.confirm'|trans }}</button>
+                                                {{ form_end(editForm) }}
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="modalDelete{{ memberRole.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-md" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">{{ 'memberrole.delete.title'|trans }}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                                <div class="col-xs-10"><p>{{ 'memberrole.delete.message'|trans }}</p></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                {% set deleteForm = attribute(deleteForms, key) %}
+                                                {{ form_start(deleteForm) }}
+                                                    {{ form_widget(deleteForm) }}
+                                                    <button type="submit" class="btn btn-danger pull-right">{{ icon('times fa-fw') }}{{ 'memberrole.delete.confirm'|trans }}</button>
+                                                {{ form_end(deleteForm) }}
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center">
+                            {{ knp_pagination_render(memberRoles) }}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">{{ 'memberrole.new.title'|trans }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                {{ form_start(newForm) }}
+                                    {{ form_widget(newForm) }}
+                                    <button type="submit" class="btn btn-primary pull-right">{{ icon('check fa-fw') }}{{ 'memberrole.new.confirm'|trans }}</button>
+                                {{ form_end(newForm) }}
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}

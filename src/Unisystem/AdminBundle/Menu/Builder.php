@@ -16,7 +16,7 @@ class Builder implements ContainerAwareInterface
         $menu = $factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
         $menu->setChildrenAttribute('id', 'top-menu');
-        $menu->addChild('frontpage.index.link', array('route' => 'unisystem_frontpage_homepage'))->setAttribute('icon', 'flag fa-fw')->setAttribute('translation_domain', 'UnisystemFrontpageBundle');
+        $menu->addChild('frontpage.index.link', array('route' => 'unisystem_frontpage_main'))->setAttribute('icon', 'flag fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
 //        $menu->addChild('security.login.link', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'sign-in fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
 //        $menu->addChild('security.logout.link', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'sign-out fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
 //        $menu->addChild('profile.show.link', array('route' => 'fos_user_profile_show'))->setAttribute('icon', 'user fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
@@ -30,9 +30,9 @@ class Builder implements ContainerAwareInterface
     public function sideMenu(FactoryInterface $factory, array $options)
     {
 
-        $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav');
-        $menu->setChildrenAttribute('id', 'side-menu');
+        $sidemenu = $factory->createItem('root');
+        $sidemenu->setChildrenAttribute('class', 'nav');
+        $sidemenu->setChildrenAttribute('id', 'side-menu');
 
 //        $menu->addChild('page.menu.group')->setAttribute('icon', 'clone fa-fw')->setAttribute('translation_domain', 'UnisystemPageBundle');
 //        $menu['page.menu.group']->setChildrenAttribute('class', 'nav nav-second-level collapse');
@@ -55,19 +55,19 @@ class Builder implements ContainerAwareInterface
 //        $menu['notice.menu']->addChild('notice.photography', array('route' => 'notice_photography_index'))->setAttribute('translation_domain', 'UnisystemNoticeBundle');
 //        $menu['notice.menu']->addChild('notice.category', array('route' => 'notice_category_index'))->setAttribute('translation_domain', 'UnisystemNoticeBundle');
 
-        $menu->addChild('member.menu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemMemberBundle');
-        $menu['member.menu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
-        $menu['member.menu.root']->addChild('member.menu.list', array('route' => 'member_index'))->setAttribute('translation_domain', 'UnisystemMemberBundle');
-        $menu['member.menu.root']->addChild('member.menu.course', array('route' => 'member_course_index'))->setAttribute('translation_domain', 'UnisystemMemberBundle');
-        $menu['member.menu.root']->addChild('member.menu.role', array('route' => 'member_role_index'))->setAttribute('translation_domain', 'UnisystemMemberBundle');
+        $sidemenu->addChild('member.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['member.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['member.sidemenu.root']->addChild('member.sidemenu.index', array('route' => 'member_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['member.sidemenu.root']->addChild('member.sidemenu.course', array('route' => 'member_course_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['member.sidemenu.root']->addChild('member.sidemenu.role', array('route' => 'member_role_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $menu->addChild('resource.menu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemResourceBundle');
-        $menu['resource.menu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
-        $menu['resource.menu.root']->addChild('resource.menu.list', array('route' => 'resource_index'))->setAttribute('translation_domain', 'UnisystemResourceBundle');
+        $sidemenu->addChild('resource.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['resource.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['resource.sidemenu.root']->addChild('resource.sidemenu.index', array('route' => 'resource_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $menu->addChild('process.menu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemProcessBundle');
-        $menu['process.menu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
-        $menu['process.menu.root']->addChild('stage.menu.list', array('route' => 'stage_index'))->setAttribute('translation_domain', 'UnisystemProcessBundle');
+        $sidemenu->addChild('process.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['process.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['process.sidemenu.root']->addChild('process.sidemenu.index', array('route' => 'history_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
 //        $menu->addChild('document.menu')->setAttribute('icon', 'file fa-fw')->setAttribute('translation_domain', 'UnisystemDocumentBundle');
 //        $menu['document.menu']->setChildrenAttribute('class', 'nav nav-second-level collapse');
@@ -120,7 +120,7 @@ class Builder implements ContainerAwareInterface
 //        $menu->addChild('document_index', array('route' => 'member_index'))->setAttribute('icon', 'check fa-fw');
 //        $menu->addChild('link_index', array('route' => 'member_index'))->setAttribute('icon', 'external-link fa-fw');
 
-        return $menu;
+        return $sidemenu;
 
     }
 

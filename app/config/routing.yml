@@ -1,34 +1,6 @@
-unisystem_process:
-    resource: "@UnisystemProcessBundle/Resources/config/routing.yml"
-    prefix:   /admin/history
-
 unisystem_admin:
     resource: "@UnisystemAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
-
-unisystem_document:
-    resource: "@UnisystemDocumentBundle/Resources/config/routing.yml"
-    prefix:   /admin/document
-
-unisystem_notice:
-    resource: "@UnisystemNoticeBundle/Resources/config/routing.yml"
-    prefix:   /admin/notice
-
-unisystem_member:
-    resource: "@UnisystemMemberBundle/Resources/config/routing.yml"
-    prefix:   /admin/member
-
-unisystem_resource:
-    resource: "@UnisystemResourceBundle/Resources/config/routing.yml"
-    prefix:   /admin/resource
-
-unisystem_product:
-    resource: "@UnisystemProductBundle/Resources/config/routing.yml"
-    prefix:   /admin/product
-
-unisystem_page:
-    resource: "@UnisystemPageBundle/Resources/config/routing.yml"
-    prefix:   /admin/page
 
 unisystem_user:
     resource: "@UnisystemUserBundle/Resources/config/routing.yml"

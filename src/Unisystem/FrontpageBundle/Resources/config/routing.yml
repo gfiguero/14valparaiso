@@ -1,6 +1,6 @@
-unisystem_frontpage_homepage:
+unisystem_frontpage_main:
     path:     /
-    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:index }
+    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:main }
 
 unisystem_frontpage_member:
     path:     /member
@@ -10,9 +10,9 @@ unisystem_frontpage_academy:
     path:     /academy
     defaults: { _controller: UnisystemFrontpageBundle:Frontpage:academy }
 
-unisystem_frontpage_equipment:
-    path:     /equipment
-    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:equipment }
+unisystem_frontpage_resource:
+    path:     /resource
+    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:resource }
 
 unisystem_frontpage_history:
     path:     /history

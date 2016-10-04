@@ -1,0 +1,24 @@
+member_index:
+    path:     /
+    defaults: { _controller: "UnisystemAdminBundle:Member:index" }
+    methods:  GET
+
+member_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemAdminBundle:Member:show" }
+    methods:  GET
+
+member_new:
+    path:     /new
+    defaults: { _controller: "UnisystemAdminBundle:Member:new" }
+    methods:  [GET, POST]
+
+member_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemAdminBundle:Member:edit" }
+    methods:  [GET, POST]
+
+member_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemAdminBundle:Member:delete" }
+    methods:  DELETE

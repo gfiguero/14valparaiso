@@ -1,0 +1,4 @@
+Unisystem\AdminBundle\Entity\History:
+    file:
+        mapping:           history
+        filename_property: photography

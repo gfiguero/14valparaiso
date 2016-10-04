@@ -6,64 +6,25 @@ setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
 setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
 setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
 
-php app/console generate:bundle --namespace Unisystem/PageBundle --dir src --bundle-name UnisystemPageBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/UserBundle --dir src --bundle-name UnisystemUserBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/ProductBundle --dir src --bundle-name UnisystemProductBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/ProcessBundle --dir src --bundle-name UnisystemProcessBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/ResourceBundle --dir src --bundle-name UnisystemResourceBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/MemberBundle --dir src --bundle-name UnisystemMemberBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/NoticeBundle --dir src --bundle-name UnisystemNoticeBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Unisystem/DocumentBundle --dir src --bundle-name UnisystemDocumentBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Unisystem/AdminBundle --dir src --bundle-name UnisystemAdminBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Unisystem/FrontpageBundle --dir src --bundle-name UnisystemFrontpageBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Unisystem/UploadBundle --dir src --bundle-name UnisystemUploadBundle --format yml --shared --no-interaction
 
 php app/console assetic:dump --env=dev
 
-php app/console doctrine:generate:entities UnisystemMemberBundle:Member --path=src
-php app/console doctrine:generate:entities UnisystemMemberBundle:MemberRole --path=src
-php app/console doctrine:generate:entities UnisystemMemberBundle:MemberCourse --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:Member --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:MemberRole --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:MemberCourse --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:History --path=src
 
-php app/console doctrine:generate:entities UnisystemResourceBundle:Resource --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
 
-php app/console doctrine:generate:entities UnisystemPageBundle --path=src
-php app/console doctrine:generate:entities UnisystemUserBundle --path=src
-php app/console doctrine:generate:entities UnisystemProductBundle --path=src
-php app/console doctrine:generate:entities UnisystemNoticeBundle --path=src
-php app/console doctrine:generate:entities UnisystemDocumentBundle --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle --path=src
 
 php app/console doctrine:database:drop --force
 php app/console doctrine:database:create
 php app/console doctrine:schema:update --force
-
-rm src/Unisystem/DocumentBundle/Form/*
-rm src/Unisystem/ProductBundle/Form/*
-rm src/Unisystem/UserBundle/Form/*
-rm src/Unisystem/NoticeBundle/Form/*
-rm src/Unisystem/MemberBundle/Form/*
-rm src/Unisystem/AdminBundle/Form/*
-rm src/Unisystem/PageBundle/Form/*
-
-php app/console generate:doctrine:form UnisystemPageBundle:Page
-php app/console generate:doctrine:form UnisystemPageBundle:PagePhotography
-php app/console generate:doctrine:form UnisystemPageBundle:PageService
-php app/console generate:doctrine:form UnisystemPageBundle:PageProcess
-php app/console generate:doctrine:form UnisystemPageBundle:PagePublication
-php app/console generate:doctrine:form UnisystemProductBundle:Product
-php app/console generate:doctrine:form UnisystemProductBundle:ProductPhotography
-php app/console generate:doctrine:form UnisystemProductBundle:ProductCategory
-php app/console generate:doctrine:form UnisystemProductBundle:ProductProperty
-php app/console generate:doctrine:form UnisystemMemberBundle:Member
-php app/console generate:doctrine:form UnisystemMemberBundle:MemberCourse
-php app/console generate:doctrine:form UnisystemMemberBundle:MemberRole
-php app/console generate:doctrine:form UnisystemNoticeBundle:Notice
-php app/console generate:doctrine:form UnisystemNoticeBundle:NoticePhotography
-php app/console generate:doctrine:form UnisystemNoticeBundle:NoticeCategory
-php app/console generate:doctrine:form UnisystemDocumentBundle:Document
-php app/console generate:doctrine:form UnisystemDocumentBundle:DocumentCategory
-php app/console generate:doctrine:form UnisystemUserBundle:User
-php app/console generate:doctrine:form UnisystemAdminBundle:AdminModule
 
 php app/console generate:doctrine:crud --entity=UnisystemPageBundle:Page --format=yml --with-write --overwrite --no-interaction --route-prefix=page
 php app/console generate:doctrine:crud --entity=UnisystemPageBundle:PagePhotography --format=yml --with-write --overwrite --no-interaction --route-prefix=page_photography

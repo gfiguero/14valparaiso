@@ -1,4 +1,19 @@
-unisystem_admin_admin_module:
-    resource: "@UnisystemAdminBundle/Resources/config/routing/adminmodule.yml"
-    prefix:   /admin_module
+unisystem_admin_member:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/member.yml"
+    prefix:   /member/index
 
+unisystem_admin_member_course:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/membercourse.yml"
+    prefix:   /member/course
+
+unisystem_admin_member_role:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/memberrole.yml"
+    prefix:   /member/role
+
+unisystem_admin_history:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/history.yml"
+    prefix:   /history/index
+
+unisystem_admin_resource:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/resource.yml"
+    prefix:   /resource/index
