@@ -21,6 +21,16 @@ class FrontpageController extends Controller
         ));
     }
 
+    public function officerAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $members = $em->getRepository('UnisystemAdminBundle:Member')->getOfficerList();
+
+        return $this->render('UnisystemFrontpageBundle:Page:member.html.twig', array(
+            'members' => $members,
+        ));
+    }
+
     public function academyAction()
     {
         $em = $this->getDoctrine()->getManager();

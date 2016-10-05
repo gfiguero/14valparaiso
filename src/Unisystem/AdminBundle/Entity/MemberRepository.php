@@ -29,6 +29,19 @@ class MemberRepository extends EntityRepository
             ->select('m')
             ->from('UnisystemAdminBundle:Member', 'm')
             ->leftJoin('m.role', 'mr')
+            ->orderBy('m.code', 'ASC')
+            ->getQuery();
+
+        return $qb->getResult();
+    }
+
+    public function getOfficerList()
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder()
+            ->select('m')
+            ->from('UnisystemAdminBundle:Member', 'm')
+            ->leftJoin('m.role', 'mr')
+            ->where('mr.officer = TRUE')
             ->orderBy('mr.rank', 'DESC')
             ->getQuery();
 

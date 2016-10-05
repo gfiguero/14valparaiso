@@ -1,11 +1,18 @@
 frontpage:
+    officer:
+        link: Oficiales
+        title: Oficiales
     member:
-        link: Integrantes
+        link: Voluntarios
+        title: Voluntarios
     academy:
         link: Academia
+        title: Academia
     equipment:
         link: Material Mayor
+        title: Material Mayor
     history:
         link: Historia
+        title: Historia
     admin:
         link: Administración

@@ -6,6 +6,10 @@ unisystem_frontpage_member:
     path:     /member
     defaults: { _controller: UnisystemFrontpageBundle:Frontpage:member }
 
+unisystem_frontpage_officer:
+    path:     /officer
+    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:officer }
+
 unisystem_frontpage_academy:
     path:     /academy
     defaults: { _controller: UnisystemFrontpageBundle:Frontpage:academy }
