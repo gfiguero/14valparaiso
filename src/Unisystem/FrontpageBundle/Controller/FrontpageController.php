@@ -26,7 +26,7 @@ class FrontpageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $members = $em->getRepository('UnisystemAdminBundle:Member')->getOfficerList();
 
-        return $this->render('UnisystemFrontpageBundle:Page:member.html.twig', array(
+        return $this->render('UnisystemFrontpageBundle:Page:officer.html.twig', array(
             'members' => $members,
         ));
     }
