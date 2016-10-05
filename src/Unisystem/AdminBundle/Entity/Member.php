@@ -465,6 +465,7 @@ class Member
 
     public function setFile(File $file = null)
     {
+        dump($file);
         $this->file = $file;
         if ($file) { $this->updatedAt = new \DateTime('now'); }
         return $this;

@@ -71,13 +71,9 @@ class MemberController extends Controller
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'member.created' );    
 
-            return $this->redirect($request->headers->get('referer'));
         }
+        return $this->redirect($request->headers->get('referer'));
 
-        return $this->render('UnisystemAdminBundle:Member:new.html.twig', array(
-            'member' => $member,
-            'form' => $form->createView(),
-        ));
     }
 
     /**
@@ -110,14 +106,9 @@ class MemberController extends Controller
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'member.edited' );    
 
-            return $this->redirect($request->headers->get('referer'));
         }
 
-        return $this->render('UnisystemAdminBundle:Member:edit.html.twig', array(
-            'member' => $member,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->redirect($request->headers->get('referer'));
     }
 
     /**

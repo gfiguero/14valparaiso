@@ -37,36 +37,70 @@
                             {#}
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"></h4>
+                                <h3 class="modal-title" id="myModalLabel">Ficha de Bombero</h3>
                             </div>
                             {#}
                             <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 nopadding">
-                                    {% if member.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_large') }}"/>
-                                    {% else %}<img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_large') }}"/>{% endif %}
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                    <h1>{% if member.name %}{{ member.name }}{% endif %}</h1>
-                                    <dl class="dl-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                        {% if member.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_large') }}"/>
+                                        {% else %}<img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_large') }}"/>{% endif %}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                                        <h1>{{ member.name }}</h1>
+                                        <fieldset>
+                                            <legend>Datos Personales</legend>
+                                            <dl class="dl-horizontal">
+                                                {#% if member.name %}<dt>{{ 'member.form.name'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.name }}</dd>{% endif %#}
+                                                {% if member.email %}<dt>{{ 'member.form.email'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.email }}</dd>{% endif %}
+                                                {% if member.phone %}<dt>{{ 'member.form.phone'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.phone }}</dd>{% endif %}
+                                                {% if member.birthdate %}<dt>{{ 'member.form.birth_date'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL, Y") }}</dd>{% endif %}
+                                            </dl>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Datos Corporativos</legend>
+                                            <dl class="dl-horizontal">
+                                                {% if member.role %}<dt>{{ 'member.form.role'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.role.name }}</dd>{% endif %}
+                                                {% if member.admissiondate %}<dt>{{ 'member.form.admission_date'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL, Y") }}</dd>{% endif %}
+                                                {% if member.code %}<dt>{{ 'member.form.code'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ member.code }}</dd>{% endif %}
+                                            </dl>
+                                        </fieldset>
+                                        {% if member.previousroles is not empty %}
+                                            <fieldset>
+                                                <legend>{{ 'member.form.previous_roles'|trans({}, 'UnisystemAdminBundle') }}</legend>
+                                                <ul>
+                                                    {% for previousrole in member.previousroles %}
+                                                        {% if previousrole.name %}<li>{{ previousrole.name }}</li>{% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </fieldset>
+                                        {% endif %}
+
+                                        {% if member.courses is not empty %}
+                                            <fieldset>
+                                                <legend>{{ 'member.form.courses'|trans({}, 'UnisystemAdminBundle') }}</legend>
+                                                <ul>
+                                                    {% for course in member.courses %}
+                                                        {% if course.name %}<li>{{ course.name }}</li>{% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </fieldset>
+                                        {% endif %}
+                                        {#}
                                         {% set courses = [] %}
                                         {% for course in member.courses %}{% set courses = courses|merge([course.name]) %}{% endfor %}
+                                        {% if courses %}<dt>{{ 'member.form.courses'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ courses|join(', ') }}</dd>{% endif %}
+
                                         {% set previousroles = [] %}
                                         {% for previousrole in member.previousroles %}{% set previousroles = previousroles|merge([previousrole.name]) %}{% endfor %}
-                                        {% if member.code %}<dt>{{ 'member.form.code'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.code }}</dd>{% endif %}
-                                        {% if courses %}<dt>{{ 'member.form.courses'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ courses|join(', ') }}</dd>{% endif %}
-                                        {% if member.birthdate %}<dt>{{ 'member.form.birth_date'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.birthdate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL, Y") }}</dd>{% endif %}
-                                        {% if member.admissiondate %}<dt>{{ 'member.form.admission_date'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.admissiondate|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL, Y") }}</dd>{% endif %}
-                                        {% if member.role %}<dt>{{ 'member.form.role'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.role.name }}</dd>{% endif %}
-                                        {% if previousroles %}<dt>{{ 'member.form.previous_roles'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ previousroles|join(', ') }}</dd>{% endif %}
-                                        {% if member.email %}<dt>{{ 'member.form.email'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.email }}</dd>{% endif %}
-                                        {% if member.phone %}<dt>{{ 'member.form.phone'|trans({}, 'UnisystemMemberBundle') }}</dt><dd>{{ member.phone }}</dd>{% endif %}
-                                    </dl>
-                                    {#}
-                                    <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-label="Close">{{ icon('times fa-fw') }}&nbsp;Cerrar</button>
-                                    {#}
+                                        {% if previousroles %}<dt>{{ 'member.form.previous_roles'|trans({}, 'UnisystemAdminBundle') }}</dt><dd>{{ previousroles|join(', ') }}</dd>{% endif %}
+                                        {#}
+                                        {#}
+                                        <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-label="Close">{{ icon('times fa-fw') }}&nbsp;Cerrar</button>
+                                        {#}
+                                    </div>
                                 </div>
-                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
