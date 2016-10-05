@@ -122,7 +122,7 @@ resource:
     form:
         name: Nombre
 
-process:
+history:
     sidemenu:
         root: Historia
         index: Lista de eventos
@@ -133,7 +133,6 @@ process:
     index:
         link: Lista de eventos
         title: Lista de eventos
-        actions: Acciones
     edit:
         link: Editar evento
         title: Editar evento
@@ -149,3 +148,70 @@ process:
         deleted: Evento eliminado
     form:
         name: Nombre
+        actions: Acciones
+
+academy:
+    sidemenu:
+        root: Academia
+        index: Lista de academias
+        future: Academias futuras
+        past: Academias pasadas
+    new:
+        link: Registrar nueva academia
+        title: Registrar nueva academia
+        confirm: Confirmar Registro
+    index:
+        link: Lista de academias
+        title: Lista de academias
+    edit:
+        link: Editar academia
+        title: Editar academia
+        confirm: Guardar Cambios
+    delete:
+        link: Eliminar academia
+        title: Eliminación de academia
+        message: Los datos de la academia no podrán ser recuperados
+        confirm: Confirmar Eliminación
+    flash:
+        created: Academia creada satistactoriamente
+        edited: Academia editada satistactoriamente
+        deleted: Academia eliminada
+    form:
+        name: Nombre
+        schedule: Agendada
+        description: Descripción
+        place: Lugar
+        actions: Acciones
+
+main:
+    sidemenu:
+        root: Página principal
+    photography:
+        sidemenu:
+            root: Fotografías
+            index: Lista de fotografías
+        new:
+            link: Registrar nueva fotografía
+            title: Registrar nueva fotografía
+            confirm: Confirmar Registro
+        index:
+            link: Lista de fotografías
+            title: Lista de fotografías
+        edit:
+            link: Editar fotografía
+            title: Editar fotografía
+            confirm: Guardar Cambios
+        delete:
+            link: Eliminar fotografía
+            title: Eliminación de fotografía
+            message: Los datos de la fotografía no podrán ser recuperados
+            confirm: Confirmar Eliminación
+        flash:
+            created: Fotografía creada satistactoriamente
+            edited: Fotografía editada satistactoriamente
+            deleted: Fotografía eliminada
+        form:
+            title: Título
+            caption: Descripción breve
+            photography: Fotografía
+            actions: Acciones

@@ -18,24 +18,24 @@ class AcademyType extends AbstractType
         $builder
             ->add('name', null, array(
                 'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
-                'label' => 'resource.form.name',
+                'label' => 'academy.form.name',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
             ))
             ->add('place', null, array(
                 'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
-                'label' => 'resource.form.place',
+                'label' => 'academy.form.place',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
             )) 
             ->add('schedule', null, array(
                 'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
-                'label' => 'resource.form.schedule',
+                'label' => 'academy.form.schedule',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
             )) 
             ->add('description', null, array( 
-                'label' => 'resource.form.description',
+                'label' => 'academy.form.description',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'attr' => array( 'class' => 'switch', 'label_col' => 3, 'widget_col' => 9 ),
                 'required' => false,

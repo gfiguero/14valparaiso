@@ -8,7 +8,12 @@ class FrontpageController extends Controller
 {
     public function mainAction()
     {
-        return $this->render('UnisystemFrontpageBundle:Page:main.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $photographies = $em->getRepository('UnisystemAdminBundle:MainPhotography')->findAll();
+
+        return $this->render('UnisystemFrontpageBundle:Page:main.html.twig', array(
+            'photographies' => $photographies,
+        ));
     }
 
     public function memberAction()

@@ -68,8 +68,8 @@ liip_imagine:
         main_photography_large:
             quality: 75
             filters:
-                upscale: { min: [920, 1200] }
-                thumbnail: { size: [920, 1200], mode: outbound }
+                upscale: { min: [1900, 900] }
+                thumbnail: { size: [1900, 900], mode: outbound }
 
         frontpage_gallery_modal:
             quality: 75

@@ -61,22 +61,22 @@ class Builder implements ContainerAwareInterface
         $sidemenu['member.sidemenu.root']->addChild('member.sidemenu.course', array('route' => 'member_course_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['member.sidemenu.root']->addChild('member.sidemenu.role', array('route' => 'member_role_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $sidemenu->addChild('resource.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu->addChild('resource.sidemenu.root')->setAttribute('icon', 'truck fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['resource.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['resource.sidemenu.root']->addChild('resource.sidemenu.index', array('route' => 'resource_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $sidemenu->addChild('history.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu->addChild('history.sidemenu.root')->setAttribute('icon', 'book fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['history.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['history.sidemenu.root']->addChild('history.sidemenu.index', array('route' => 'history_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $sidemenu->addChild('academy.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu->addChild('academy.sidemenu.root')->setAttribute('icon', 'graduation-cap fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['academy.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['academy.sidemenu.root']->addChild('academy.sidemenu.future', array('route' => 'academy_future'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['academy.sidemenu.root']->addChild('academy.sidemenu.past', array('route' => 'academy_past'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
-        $sidemenu->addChild('main.sidemenu.root')->setAttribute('icon', 'users fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu->addChild('main.sidemenu.root')->setAttribute('icon', 'home fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['main.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
-        $sidemenu['main.sidemenu.root']->addChild('photography.sidemenu.index', array('route' => 'main_photography_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['main.sidemenu.root']->addChild('main.photography.sidemenu.index', array('route' => 'main_photography_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 //        $menu->addChild('document.menu')->setAttribute('icon', 'file fa-fw')->setAttribute('translation_domain', 'UnisystemDocumentBundle');
 //        $menu['document.menu']->setChildrenAttribute('class', 'nav nav-second-level collapse');
 //        $menu['document.menu']->addChild('document.list', array('route' => 'document_index'))->setAttribute('translation_domain', 'UnisystemDocumentBundle');
