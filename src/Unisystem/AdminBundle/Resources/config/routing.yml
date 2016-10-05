@@ -12,12 +12,16 @@ unisystem_admin_member_role:
 
 unisystem_admin_history:
     resource: "@UnisystemAdminBundle/Resources/config/routing/history.yml"
-    prefix:   /history/index
+    prefix:   /history
 
 unisystem_admin_resource:
     resource: "@UnisystemAdminBundle/Resources/config/routing/resource.yml"
-    prefix:   /resource/index
+    prefix:   /resource
 
 unisystem_admin_academy:
     resource: "@UnisystemAdminBundle/Resources/config/routing/academy.yml"
-    prefix:   /academy/index
+    prefix:   /academy
+
+unisystem_admin_main_photography:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/mainphotography.yml"
+    prefix:   /mainphotography

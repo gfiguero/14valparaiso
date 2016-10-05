@@ -55,6 +55,22 @@ liip_imagine:
                 upscale: { min: [920, 1200] }
                 thumbnail: { size: [920, 1200], mode: outbound }
 
+        main_photography_small:
+            quality: 75
+            filters:
+                upscale: { min: [80, 80] }
+                thumbnail: { size: [80, 80], mode: outbound }
+        main_photography_medium:
+            quality: 75
+            filters:
+                upscale: { min: [500, 500] }
+                thumbnail: { size: [500, 500], mode: outbound }
+        main_photography_large:
+            quality: 75
+            filters:
+                upscale: { min: [920, 1200] }
+                thumbnail: { size: [920, 1200], mode: outbound }
+
         frontpage_gallery_modal:
             quality: 75
             default_image: /uploads/photography/default.jpg
