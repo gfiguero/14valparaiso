@@ -11,29 +11,17 @@
                     <h1>Material Mayor</h1>
                 </div>
             </div>
-            <div class="col-xs-12">
-                {% for resource in resources %}
-                    <div class="media">
-                        {% if loop.index is odd %}
-                            <div class="media-left">
-                                <a href="#"><img class="img-rounded media-object" src="{{ vich_uploader_asset(resource, 'file')|imagine_filter('resource_photography_medium') }}" alt="..."></a>
-                            </div>
-                            <div class="media-body">
-                                {% if resource.name %}<h4 class="media-heading">{{ resource.name }}</h4>{% endif %}
-                                {% if resource.description %}{{ resource.description }}{% endif %}
-                            </div>
-                        {% else %}
-                            <div class="media-body">
-                                {% if resource.name %}<h4 class="media-heading">{{ resource.name }}</h4>{% endif %}
-                                {% if resource.description %}{{ resource.description }}{% endif %}
-                            </div>
-                            <div class="media-right">
-                                <a href="#"><img class="img-rounded media-object" src="{{ vich_uploader_asset(resource, 'file')|imagine_filter('resource_photography_medium') }}" alt="..."></a>
-                            </div>
-                        {% endif %}
+            {% for resource in resources %}
+            <div class="col-xs-12 col-md-4">
+                <div class="thumbnail">
+                    <img class="img-rounded img-responsive" src="{{ vich_uploader_asset(resource, 'file')|imagine_filter('resource_photography_medium') }}" alt="...">
+                    <div class="caption">
+                        {% if resource.name %}<h2>{{ resource.name }}</h2>{% endif %}
+                        {% if resource.description %}<p>{{ resource.description }}</p>{% endif %}
                     </div>
-                {% endfor %}
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
