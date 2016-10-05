@@ -22,7 +22,6 @@ class MainPhotographyType extends AbstractType
             ->add('caption', null, array( 
                 'label' => 'main.photography.form.caption',
                 'translation_domain' => 'UnisystemAdminBundle',
-                'required' => false,
             ))
             ->add('file', 'fileinput', array(
                 'label' => 'main.photography.form.photography',
