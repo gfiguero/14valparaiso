@@ -31,8 +31,8 @@ liip_imagine:
         resource_photography_medium:
             quality: 75
             filters:
-                upscale: { min: [300, 300] }
-                thumbnail: { size: [300, 300], mode: outbound }
+                upscale: { min: [530, 300] }
+                thumbnail: { size: [530, 300], mode: outbound }
         resource_photography_large:
             quality: 75
             filters:
