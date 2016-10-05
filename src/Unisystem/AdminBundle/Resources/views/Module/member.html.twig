@@ -21,6 +21,23 @@
                     <div class="panel-heading">
                         <div class="btn-toolbar">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNew">{{ icon('plus fa-fw') }}{{ 'member.new.link'|trans }}</button>
+                            <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">{{ 'member.new.title'|trans }}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{ form_start(newForm) }}
+                                                {{ form_widget(newForm) }}
+                                                <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'member.new.confirm'|trans }}</button>
+                                            {{ form_end(newForm) }}
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -48,81 +65,9 @@
                                     <td>{% if member.photography %}{{ icon('check fa-fw fa-2x') }}{% else %}{{ icon('times fa-fw fa-2x') }}{% endif %}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit{{ member.id }}">{{ icon('edit fa-fw') }}{{ 'member.edit.link'|trans }}</button>
-                                        <div class="modal fade" id="modalEdit{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">{{ 'member.edit.title'|trans }}</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                {% if member.photography %}
-                                                                    <img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_medium') }}" alt="{{ 1 }}" />
-                                                                {% else %}
-                                                                    <img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_medium') }}" alt="{{ 1 }}" />
-                                                                {% endif %}
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                {% set editForm = attribute(editForms, key) %}
-                                                                {{ form_start(editForm) }}
-                                                                    {{ form_widget(editForm) }}
-                                                                    <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'member.edit.confirm'|trans }}</button>
-                                                                {{ form_end(editForm) }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete{{ member.id }}">{{ icon('times fa-fw') }}{{ 'member.delete.link'|trans }}</button>
-                                        <div class="modal fade" id="modalDelete{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog modal-md" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">{{ 'member.delete.title'|trans }}</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
-                                                        <div class="col-xs-10"><p>{{ 'member.delete.message'|trans }}</p></div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        {% set deleteForm = attribute(deleteForms, key) %}
-                                                        {{ form_start(deleteForm) }}
-                                                            {{ form_widget(deleteForm) }}
-                                                            <button type="submit" class="btn btn-danger pull-right">{{ icon('times fa-fw') }}{{ 'member.delete.confirm'|trans }}</button>
-                                                        {{ form_end(deleteForm) }}
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
-{#}
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                {% if member.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(member, 'file', 'Unisystem\\AdminBundle\\Entity\\Member')|imagine_filter('member_photography_small') }}" />
-                                                {% else %}<img class="media-object img-rounded" src="{{ 'default'|imagine_filter('member_photography_small') }}" />{% endif %}
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">{% if member.name %}{{ member.name }}{% else %}&nbsp;{% endif %}</h4>
-                                                <p>{% if member.role %}{{ member.role.name }}{% else %}&nbsp;{% endif %}</p>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit{{ member.id }}">{{ icon('edit fa-fw') }}{{ 'member.edit.link'|trans }}</button>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete{{ member.id }}">{{ icon('times fa-fw') }}{{ 'member.delete.link'|trans }}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-{#}
-
                             {% endfor %}
                             </tbody>
                         </table>
@@ -134,23 +79,59 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog modal-sm" role="document">
+            {% for key, member in members %}
+                <div class="modal fade" id="modalEdit{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">{{ 'member.new.title'|trans }}</h4>
+                                <h4 class="modal-title" id="myModalLabel">{{ 'member.edit.title'|trans }}</h4>
                             </div>
                             <div class="modal-body">
-                                {{ form_start(newForm) }}
-                                    {{ form_widget(newForm) }}
-                                    <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'member.new.confirm'|trans }}</button>
-                                {{ form_end(newForm) }}
+                                <div class="row">
+                                    <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+                                        {% if member.photography %}
+                                            <img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_medium') }}" alt="{{ 1 }}" />
+                                        {% else %}
+                                            <img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_medium') }}" alt="{{ 1 }}" />
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        {% set editForm = attribute(editForms, key) %}
+                                        {{ form_start(editForm) }}
+                                            {{ form_widget(editForm) }}
+                                            <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'member.edit.confirm'|trans }}</button>
+                                        {{ form_end(editForm) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modalDelete{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">{{ 'member.delete.title'|trans }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'member.delete.message'|trans }}</p></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="modal-footer">
+                                {% set deleteForm = attribute(deleteForms, key) %}
+                                {{ form_start(deleteForm) }}
+                                    {{ form_widget(deleteForm) }}
+                                    <button type="submit" class="btn btn-danger pull-right">{{ icon('times fa-fw') }}{{ 'member.delete.confirm'|trans }}</button>
+                                {{ form_end(deleteForm) }}
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+            {% endfor %}
             </div>
             <!-- /.col-lg-12 -->
         </div>
