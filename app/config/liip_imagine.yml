@@ -14,8 +14,8 @@ liip_imagine:
             quality: 75
             default_image: /uploads/member/BomberoDefault.jpg
             filters:
-                upscale: { min: [500, 500] }
-                thumbnail: { size: [500, 500], mode: outbound }
+                upscale: { min: [460, 600] }
+                thumbnail: { size: [460, 600], mode: outbound }
         member_photography_large:
             quality: 75
             default_image: /uploads/member/BomberoDefault.jpg
