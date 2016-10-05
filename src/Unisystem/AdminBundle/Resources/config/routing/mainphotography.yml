@@ -1,0 +1,24 @@
+main_photography_index:
+    path:     /
+    defaults: { _controller: "UnisystemAdminBundle:MainPhotography:index" }
+    methods:  GET
+
+main_photography_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemAdminBundle:MainPhotography:show" }
+    methods:  GET
+
+main_photography_new:
+    path:     /new
+    defaults: { _controller: "UnisystemAdminBundle:MainPhotography:new" }
+    methods:  [GET, POST]
+
+main_photography_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemAdminBundle:MainPhotography:edit" }
+    methods:  [GET, POST]
+
+main_photography_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemAdminBundle:MainPhotography:delete" }
+    methods:  DELETE

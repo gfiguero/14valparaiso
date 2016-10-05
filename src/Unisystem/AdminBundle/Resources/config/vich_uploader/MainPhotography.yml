@@ -1,0 +1,4 @@
+Unisystem\AdminBundle\Entity\MainPhotography:
+    file:
+        mapping:           mainphotography
+        filename_property: photography

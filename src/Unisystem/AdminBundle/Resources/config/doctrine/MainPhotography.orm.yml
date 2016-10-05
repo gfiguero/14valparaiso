@@ -1,0 +1,40 @@
+Unisystem\AdminBundle\Entity\MainPhotography:
+    type: entity
+    table: MainPhotography
+    repositoryClass: Unisystem\AdminBundle\Entity\MainPhotographyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 300
+            nullable: true
+        caption:
+            type: text
+            nullable: true
+        photography:
+            type: string
+            length: 300
+            nullable: true
+        createdAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deletedAt:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
+    lifecycleCallbacks: {  }
