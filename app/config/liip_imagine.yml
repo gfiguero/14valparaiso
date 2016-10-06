@@ -8,8 +8,8 @@ liip_imagine:
             quality: 75
             default_image: /uploads/member/BomberoDefaultSmall.jpg
             filters:
-                upscale: { min: [120, 180] }
-                thumbnail: { size: [120, 180], mode: outbound }
+                upscale: { min: [80, 100] }
+                thumbnail: { size: [80, 100], mode: outbound }
         member_photography_medium:
             quality: 75
             default_image: /uploads/member/BomberoDefault.jpg
@@ -26,8 +26,8 @@ liip_imagine:
         resource_photography_small:
             quality: 75
             filters:
-                upscale: { min: [80, 80] }
-                thumbnail: { size: [80, 80], mode: outbound }
+                upscale: { min: [140, 80] }
+                thumbnail: { size: [140, 80], mode: outbound }
         resource_photography_medium:
             quality: 75
             filters:

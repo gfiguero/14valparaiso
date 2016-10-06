@@ -69,25 +69,11 @@ class MemberController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($member);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'member.created' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'member.new.flash' );    
 
         }
         return $this->redirect($request->headers->get('referer'));
 
-    }
-
-    /**
-     * Finds and displays a Member entity.
-     *
-     */
-    public function showAction(Member $member)
-    {
-        $deleteForm = $this->createDeleteForm($member);
-
-        return $this->render('UnisystemAdminBundle:Member:show.html.twig', array(
-            'member' => $member,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
@@ -104,7 +90,7 @@ class MemberController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($member);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'member.edited' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'member.edit.flash' );    
 
         }
 
@@ -124,7 +110,7 @@ class MemberController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($member);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'danger', 'member.deleted' );    
+            $request->getSession()->getFlashBag()->add( 'danger', 'member.delete.flash' );    
         }
 
         return $this->redirect($request->headers->get('referer'));

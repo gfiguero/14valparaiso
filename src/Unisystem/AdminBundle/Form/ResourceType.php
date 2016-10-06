@@ -30,7 +30,7 @@ class ResourceType extends AbstractType
             )) 
             ->add('file', 'fileinput', array(
                 'attr' => array( 'label_col' => 3, 'widget_col' => 9 ),
-                'label' => 'resource.form.file',
+                'label' => 'resource.form.photography',
                 'translation_domain' => 'UnisystemAdminBundle',
                 'required' => false,
             )) 

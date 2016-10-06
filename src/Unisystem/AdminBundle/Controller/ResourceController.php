@@ -29,10 +29,10 @@ class ResourceController extends Controller
 
         foreach ($resources as $key => $resource) {
             $editForms[] = $this->createForm('Unisystem\AdminBundle\Form\ResourceType', $resource, array(
-                'action' => $this->generateUrl('resource_edit', array('id' => $resource->getId())),                
+                'action' => $this->generateUrl('resource_edit', array('id' => $resource->getId())),
             ))->createView();
             $deleteForms[] = $this->createDeleteForm($resource, array(
-                'action' => $this->generateUrl('resource_delete', array('id' => $resource->getId())),                
+                'action' => $this->generateUrl('resource_delete', array('id' => $resource->getId())),
             ))->createView();
         }
 
@@ -60,29 +60,11 @@ class ResourceController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($resource);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'resource.new.flash' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'resource.new.flash' );
 
-            return $this->redirect($request->headers->get('referer'));
         }
 
-        return $this->render('resource/new.html.twig', array(
-            'resource' => $resource,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a Resource entity.
-     *
-     */
-    public function showAction(Resource $resource)
-    {
-        $deleteForm = $this->createDeleteForm($resource);
-
-        return $this->render('resource/show.html.twig', array(
-            'resource' => $resource,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->redirect($request->headers->get('referer'));
     }
 
     /**
@@ -99,7 +81,7 @@ class ResourceController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($resource);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'success', 'resource.edit.flash' );    
+            $request->getSession()->getFlashBag()->add( 'success', 'resource.edit.flash' );
 
             return $this->redirect($request->headers->get('referer'));
         }
@@ -124,7 +106,7 @@ class ResourceController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($resource);
             $em->flush();
-            $request->getSession()->getFlashBag()->add( 'danger', 'resource.delete.flash' );    
+            $request->getSession()->getFlashBag()->add( 'danger', 'resource.delete.flash' );
         }
 
         return $this->redirect($request->headers->get('referer'));

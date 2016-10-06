@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{% if memberRole.name %}{{ memberRole.name }}{% endif %}</td>
                                     <td>{% if memberRole.rank %}{{ memberRole.rank }}{% endif %}</td>
-                                    <td>{% if memberRole.officer %}{{ icon('check fa-fw') }}{% else %}{{ icon('times fa-fw') }}{% endif %}</td>
+                                    <td>{% if memberRole.officer %}{{ icon('check fa-fw fa-2x text-success') }}{% else %}{{ icon('times fa-fw fa-2x text-danger') }}{% endif %}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEdit{{ memberRole.id }}">{{ icon('edit fa-fw') }}{{ 'memberrole.edit.link'|trans }}</button>
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalDelete{{ memberRole.id }}">{{ icon('times fa-fw') }}{{ 'memberrole.delete.link'|trans }}</button>

@@ -4,29 +4,29 @@ frontpage:
 
 member:
     sidemenu:
-        root: Integrantes
-        index: Lista de Integrantes
+        root: Voluntarios
+        index: Lista de Voluntarios
         course: Cursos
         role: Cargos
     new:
-        link: Registrar Integrante
-        title: Registro de Integrante
+        link: Registrar Voluntario
+        title: Registro de Voluntario
         confirm: Confirmar Registro
+        flash: Voluntario registrado satistactoriamente
     index:
-        link: Lista de Integrantes
-        title: Lista de Integrantes
-        actions: Acciones
+        link: Lista de Voluntarios
+        title: Lista de Voluntarios
     edit:
-        link: Editar Integrante
-        title: Editar Integrante
+        link: Editar Voluntario
+        title: Editar Voluntario
         confirm: Guardar Cambios
+        flash: Voluntario editado satistactoriamente
     delete:
-        link: Eliminar Integrante
-        title: Eliminación de Integrante
-        message: Los datos del integrante no podrán ser recuperados
+        link: Eliminar Voluntario
+        title: Eliminación de Voluntario
+        message: Los datos del voluntario no podrán ser recuperados
         confirm: Confirmar Eliminación
-    flash:
-        edited: Integrante editado satistactoriamente
+        flash: Voluntario eliminado
     form:
         photography: Foto
         name: Nombre
@@ -38,7 +38,8 @@ member:
         courses: Cursos Realizados
         role: Cargo Actual
         previous_roles: Cargos Anteriores
-        enabled: El integrante se encuentra activo
+        enabled: El voluntario se encuentra activo
+        actions: Acciones
 
 membercourse:
     new:
@@ -102,25 +103,26 @@ resource:
         link: Registrar nuevo material mayor
         title: Registrar nuevo material mayor
         confirm: Confirmar Registro
+        flash: Material mayor creado satistactoriamente
     index:
         link: Lista de material mayor
         title: Lista de material mayor
-        actions: Acciones
     edit:
         link: Editar material mayor
         title: Editar material mayor
         confirm: Guardar Cambios
+        flash: Material mayor editado satistactoriamente
     delete:
         link: Eliminar material mayor
         title: Eliminación de material mayor
         message: Los datos del material mayor no podrán ser recuperados
         confirm: Confirmar Eliminación
-    flash:
-        created: Material mayor creado satistactoriamente
-        edited: Material mayor editado satistactoriamente
-        deleted: Material mayor eliminado
+        flash: Material mayor eliminado
     form:
         name: Nombre
+        description: Descripción
+        photography: Fotografía
+        actions: Acciones
 
 history:
     sidemenu:
@@ -130,6 +132,7 @@ history:
         link: Registrar nuevo evento
         title: Registrar nuevo evento
         confirm: Confirmar Registro
+        flash: Evento creado satistactoriamente
     index:
         link: Lista de eventos
         title: Lista de eventos
@@ -137,15 +140,13 @@ history:
         link: Editar evento
         title: Editar evento
         confirm: Guardar Cambios
+        flash: Evento editado satistactoriamente
     delete:
         link: Eliminar evento
         title: Eliminación de evento
         message: Los datos del evento no podrán ser recuperados
         confirm: Confirmar Eliminación
-    flash:
-        created: Evento creado satistactoriamente
-        edited: Evento editado satistactoriamente
-        deleted: Evento eliminado
+        flash: Evento eliminado
     form:
         name: Nombre
         actions: Acciones

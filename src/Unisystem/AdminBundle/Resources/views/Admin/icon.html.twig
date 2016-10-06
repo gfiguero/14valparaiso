@@ -1,8 +1,8 @@
 {% block iconos %}
-    {% if app.request.attributes.get( '_route' ) starts with 'page' %}{{ icon('clone fa-fw') }}
-    {% elseif app.request.attributes.get( '_route' ) starts with 'product' %}{{ icon('cube fa-fw') }}
-    {% elseif app.request.attributes.get( '_route' ) starts with 'notice' %}{{ icon('newspaper-o fa-fw') }}
+    {% if app.request.attributes.get( '_route' ) starts with 'main' %}{{ icon('home fa-fw') }}
     {% elseif app.request.attributes.get( '_route' ) starts with 'member' %}{{ icon('users fa-fw') }}
-    {% elseif app.request.attributes.get( '_route' ) starts with 'document' %}{{ icon('file fa-fw') }}
+    {% elseif app.request.attributes.get( '_route' ) starts with 'resource' %}{{ icon('truck fa-fw') }}
+    {% elseif app.request.attributes.get( '_route' ) starts with 'history' %}{{ icon('book fa-fw') }}
+    {% elseif app.request.attributes.get( '_route' ) starts with 'academy' %}{{ icon('graduation-cap fa-fw') }}
     {% endif %}
 {% endblock %}
