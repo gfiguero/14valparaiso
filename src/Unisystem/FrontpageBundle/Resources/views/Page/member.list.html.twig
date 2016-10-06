@@ -1,16 +1,21 @@
-{% for member in members %}
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="panel panel-default" data-toggle="modal" data-target="#modalShow{{ member.id }}">
-            <div class="panel-body">
-                {% if member.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_large') }}"/>
-                {% else %}<img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_large') }}"/>{% endif %}
-            </div>
-            <div class="panel-footer text-center">
-                <h4 class="name"><strong>{% if member.name %}{{ member.name }}{% endif %}</strong></h4>
-                <p><em>{% if member.role %}{{ member.role.name }}{% else %}&nbsp;{% endif %}</em></p>
+<div class="row">
+    {% for member in members %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="panel panel-default" data-toggle="modal" data-target="#modalShow{{ member.id }}">
+                <div class="panel-body">
+                    {% if member.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(member, 'file')|imagine_filter('member_photography_large') }}"/>
+                    {% else %}<img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('member_photography_large') }}"/>{% endif %}
+                </div>
+                <div class="panel-footer text-center">
+                    <h4 class="name"><strong>{% if member.name %}{{ member.name }}{% endif %}</strong></h4>
+                    <p><em>{% if member.role %}{{ member.role.name }}{% else %}&nbsp;{% endif %}</em></p>
+                </div>
             </div>
         </div>
-    </div>
+    {% endfor %}
+</div>
+
+{% for member in members %}
     <div class="modal fade" id="modalShow{{ member.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -78,5 +83,4 @@
             </div>
         </div>
     </div>
-
 {% endfor %}
