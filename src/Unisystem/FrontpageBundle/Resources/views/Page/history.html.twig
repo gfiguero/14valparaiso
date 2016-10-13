@@ -16,6 +16,9 @@
                     {% if loop.index is odd %}<li>{% else %}<li class="timeline-inverted">{% endif %}
                         <div class="timeline-badge">{{ icon('check') }}</div>
                         <div class="timeline-panel">
+                            <div class="timeline-image">
+                                {% if history.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(history, 'file')|imagine_filter('history_photography_medium') }}"/>{% endif %}
+                            </div>
                             <div class="timeline-heading">
                                 {% if history.title %}<h4 class="timeline-title">{{ history.title }}</h4>{% endif %}
                                 {% if history.date %}<p><small class="text-muted">{{ history.date|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</small></p>{% endif %}
@@ -171,6 +174,10 @@
 .timeline-title {
     margin-top: 0;
     color: inherit;
+}
+
+.timeline-image {
+    margin-bottom: 10px;
 }
 
 .timeline-body > p,
