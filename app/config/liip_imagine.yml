@@ -47,8 +47,8 @@ liip_imagine:
         history_photography_medium:
             quality: 75
             filters:
-                upscale: { min: [640, 360] }
-                thumbnail: { size: [640, 360], mode: outbound }
+                upscale: { min: [640, 420] }
+                thumbnail: { size: [640, 420], mode: outbound }
         history_photography_large:
             quality: 75
             filters:
