@@ -31,7 +31,7 @@ class NoticeRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->getEntityManager()->createQueryBuilder()
             ->select('n')
             ->from('UnisystemAdminBundle:Notice', 'n')
-            ->orderBy('n.createdAt', 'ASC')
+            ->orderBy('n.createdAt', 'DESC')
         ;
         return $qb->getQuery()->getResult();
     }

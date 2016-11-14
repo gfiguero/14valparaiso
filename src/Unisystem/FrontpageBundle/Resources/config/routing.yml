@@ -18,6 +18,10 @@ unisystem_frontpage_resource:
     path:     /resource
     defaults: { _controller: UnisystemFrontpageBundle:Frontpage:resource }
 
+unisystem_frontpage_notice:
+    path:     /notice
+    defaults: { _controller: UnisystemFrontpageBundle:Frontpage:notice }
+
 unisystem_frontpage_history:
     path:     /history
     defaults: { _controller: UnisystemFrontpageBundle:Frontpage:history }

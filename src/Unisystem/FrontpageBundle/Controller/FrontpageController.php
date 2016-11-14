@@ -56,6 +56,16 @@ class FrontpageController extends Controller
         ));
     }
 
+    public function noticeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $notices = $em->getRepository('UnisystemAdminBundle:Notice')->getFrontpageList();
+
+        return $this->render('UnisystemFrontpageBundle:Page:notice.html.twig', array(
+            'notices' => $notices,
+        ));
+    }
+
     public function historyAction()
     {
         $em = $this->getDoctrine()->getManager();

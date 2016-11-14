@@ -1,0 +1,31 @@
+{% extends 'UnisystemFrontpageBundle::base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>Noticias</h1>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                {% for notice in notices %}
+                    <div class="col-xs-12 col-md-4">
+                        <div class="thumbnail">
+                            {% if notice.photography %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(notice, 'file')|imagine_filter('notice_photography_medium') }}"/>{% endif %}
+                            <div class="caption">
+                                {% if notice.title %}<h2>{{ notice.title }}</h2>{% endif %}
+                                {% if notice.updatedat %}<p><small class="text-muted">{{ notice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</small></p>{% endif %}
+                                {% if notice.content %}<p>{{ notice.content|truncate(350, true) }}</p>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>    
+{% endblock %}

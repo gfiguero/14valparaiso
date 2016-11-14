@@ -14,5 +14,8 @@ frontpage:
     history:
         link: Historia
         title: Historia
+    notice:
+        link: Noticias
+        title: Noticias
     admin:
         link: Administración
