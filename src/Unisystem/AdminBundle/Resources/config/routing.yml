@@ -1,3 +1,7 @@
+unisystem_admin_notice:
+    resource: "@UnisystemAdminBundle/Resources/config/routing/notice.yml"
+    prefix:   /notice
+
 unisystem_admin_member:
     resource: "@UnisystemAdminBundle/Resources/config/routing/member.yml"
     prefix:   /member/index

@@ -55,6 +55,22 @@ liip_imagine:
                 upscale: { min: [920, 1200] }
                 thumbnail: { size: [920, 1200], mode: outbound }
 
+        notice_photography_small:
+            quality: 75
+            filters:
+                upscale: { min: [80, 80] }
+                thumbnail: { size: [80, 80], mode: outbound }
+        notice_photography_medium:
+            quality: 75
+            filters:
+                upscale: { min: [640, 420] }
+                thumbnail: { size: [640, 420], mode: outbound }
+        notice_photography_large:
+            quality: 75
+            filters:
+                upscale: { min: [920, 1200] }
+                thumbnail: { size: [920, 1200], mode: outbound }
+
         main_photography_small:
             quality: 75
             filters:

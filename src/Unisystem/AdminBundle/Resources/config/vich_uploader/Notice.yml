@@ -1,0 +1,4 @@
+Unisystem\AdminBundle\Entity\Notice:
+    file:
+        mapping:           notice
+        filename_property: photography

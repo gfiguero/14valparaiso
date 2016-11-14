@@ -21,6 +21,10 @@ vich_uploader:
             uri_prefix: uploads/history
             upload_destination: %kernel.root_dir%/../web/uploads/history
             namer: vich_uploader.namer_origname
+        notice:
+            uri_prefix: uploads/notice
+            upload_destination: %kernel.root_dir%/../web/uploads/notice
+            namer: vich_uploader.namer_origname
         mainphotography:
             uri_prefix: uploads/mainphotography
             upload_destination: %kernel.root_dir%/../web/uploads/mainphotography

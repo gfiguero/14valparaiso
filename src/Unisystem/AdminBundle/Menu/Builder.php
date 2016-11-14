@@ -69,6 +69,10 @@ class Builder implements ContainerAwareInterface
         $sidemenu['history.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['history.sidemenu.root']->addChild('history.sidemenu.index', array('route' => 'history_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
 
+        $sidemenu->addChild('notice.sidemenu.root')->setAttribute('icon', 'newspaper-o fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
+        $sidemenu['notice.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
+        $sidemenu['notice.sidemenu.root']->addChild('notice.sidemenu.index', array('route' => 'notice_index'))->setAttribute('translation_domain', 'UnisystemAdminBundle');
+
         $sidemenu->addChild('academy.sidemenu.root')->setAttribute('icon', 'graduation-cap fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
         $sidemenu['academy.sidemenu.root']->setChildrenAttribute('class', 'nav nav-second-level collapse');
         $sidemenu['academy.sidemenu.root']->addChild('academy.sidemenu.future', array('route' => 'academy_future'))->setAttribute('translation_domain', 'UnisystemAdminBundle');

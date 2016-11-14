@@ -1,0 +1,24 @@
+notice_index:
+    path:     /
+    defaults: { _controller: "UnisystemAdminBundle:Notice:index" }
+    methods:  GET
+
+notice_show:
+    path:     /{id}/show
+    defaults: { _controller: "UnisystemAdminBundle:Notice:show" }
+    methods:  GET
+
+notice_new:
+    path:     /new
+    defaults: { _controller: "UnisystemAdminBundle:Notice:new" }
+    methods:  [GET, POST]
+
+notice_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UnisystemAdminBundle:Notice:edit" }
+    methods:  [GET, POST]
+
+notice_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UnisystemAdminBundle:Notice:delete" }
+    methods:  DELETE

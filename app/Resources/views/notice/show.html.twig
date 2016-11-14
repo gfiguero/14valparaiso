@@ -1,0 +1,69 @@
+{% extends ':Admin:base.html.twig' %}
+
+{% block title %}{{ 'notice.show.title'|trans({}, 'UnisystemAdminBundle') }}{% endblock %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% include ':Admin:icon.html.twig' %}{{ 'notice.show.title'|trans({}, 'UnisystemAdminBundle') }}</h1>
+                {% include ':Admin:flashbag.html.twig' %}
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                                        
+                    <div class="panel-heading">
+                        <div class="btn-toolbar">
+                            <a type="button" class="btn btn-default" href="{{ path('notice_index') }}">{{ icon('list') }}&nbsp;{{ 'notice.list.link'|trans({}, 'UnisystemAdminBundle') }}</a>
+                            <a type="button" class="btn btn-warning" href="{{ path('notice_edit', { 'id': notice.id }) }}">{{ icon('pencil') }}&nbsp;{{ 'notice.edit.link'|trans({}, 'UnisystemAdminBundle') }}</a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-confirm">{{ icon('trash-o') }}&nbsp;{{ 'notice.delete.link'|trans({}, 'UnisystemAdminBundle') }}</button>
+                            <div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">{{ 'notice.delete.title'|trans({}, 'UnisystemAdminBundle') }}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                            <div class="col-xs-10"><p>{{ 'notice.delete.message'|trans({}, 'UnisystemAdminBundle') }}</p></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="pull-right" style="height:34px;">
+                                                {{ form_start(delete_form) }}
+                                                    <button type="submit" class="btn btn-danger">{{ icon('trash-o') }}&nbsp;{{ 'notice.delete.submit'|trans({}, 'UnisystemAdminBundle') }}</button>
+                                                {{ form_end(delete_form) }}</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="panel-body">
+                        <dl class="dl-horizontal dl-horizontal-sm dl-horizontal-md dl-horizontal-lg">
+                                <dt>{{ 'notice.title'|trans({}, 'UnisystemAdminBundle') }}</dt>
+                                    <dd>{% if notice.title %}{{ notice.title }}{% endif %}</dd>
+                                <dt>{{ 'notice.content'|trans({}, 'UnisystemAdminBundle') }}</dt>
+                                    <dd>{% if notice.content %}{{ notice.content }}{% endif %}</dd>
+                                <dt>{{ 'notice.photography'|trans({}, 'UnisystemAdminBundle') }}</dt>
+                                    <dd>{% if notice.photography %}{{ notice.photography }}{% endif %}</dd>
+                                <dt>{{ 'notice.createdAt'|trans({}, 'UnisystemAdminBundle') }}</dt>
+                                    <dd>{% if notice.createdAt %}{{ notice.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                                <dt>{{ 'notice.updatedAt'|trans({}, 'UnisystemAdminBundle') }}</dt>
+                                    <dd>{% if notice.updatedAt %}{{ notice.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}{% endif %}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
+

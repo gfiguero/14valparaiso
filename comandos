@@ -17,6 +17,7 @@ php app/console doctrine:generate:entities UnisystemAdminBundle:MemberRole --pat
 php app/console doctrine:generate:entities UnisystemAdminBundle:MemberCourse --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:History --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:Notice --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:Academy --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:MainPhotography --path=src
 
@@ -27,6 +28,8 @@ php app/console doctrine:generate:entities UnisystemAdminBundle --path=src
 php app/console doctrine:database:drop --force
 php app/console doctrine:database:create
 php app/console doctrine:schema:update --force
+
+php app/console generate:doctrine:crud --entity=UnisystemAdminBundle:Notice --format=yml --with-write --overwrite --no-interaction --route-prefix=notice
 
 php app/console generate:doctrine:crud --entity=UnisystemPageBundle:Page --format=yml --with-write --overwrite --no-interaction --route-prefix=page
 php app/console generate:doctrine:crud --entity=UnisystemPageBundle:PagePhotography --format=yml --with-write --overwrite --no-interaction --route-prefix=page_photography
@@ -40,7 +43,6 @@ php app/console generate:doctrine:crud --entity=UnisystemProductBundle:ProductPr
 php app/console generate:doctrine:crud --entity=UnisystemMemberBundle:Member --format=yml --with-write --overwrite --no-interaction --route-prefix=member
 php app/console generate:doctrine:crud --entity=UnisystemMemberBundle:MemberCourse --format=yml --with-write --overwrite --no-interaction --route-prefix=member_course
 php app/console generate:doctrine:crud --entity=UnisystemMemberBundle:MemberRole --format=yml --with-write --overwrite --no-interaction --route-prefix=member_role
-php app/console generate:doctrine:crud --entity=UnisystemNoticeBundle:Notice --format=yml --with-write --overwrite --no-interaction --route-prefix=notice
 php app/console generate:doctrine:crud --entity=UnisystemNoticeBundle:NoticePhotography --format=yml --with-write --overwrite --no-interaction --route-prefix=notice_photography
 php app/console generate:doctrine:crud --entity=UnisystemNoticeBundle:NoticeCategory --format=yml --with-write --overwrite --no-interaction --route-prefix=notice_category
 php app/console generate:doctrine:crud --entity=UnisystemDocumentBundle:Document --format=yml --with-write --overwrite --no-interaction --route-prefix=document
