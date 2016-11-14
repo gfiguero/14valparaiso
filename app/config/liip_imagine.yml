@@ -58,8 +58,8 @@ liip_imagine:
         notice_photography_small:
             quality: 75
             filters:
-                upscale: { min: [80, 80] }
-                thumbnail: { size: [80, 80], mode: outbound }
+                upscale: { min: [140, 80] }
+                thumbnail: { size: [140, 80], mode: outbound }
         notice_photography_medium:
             quality: 75
             filters:
@@ -68,8 +68,8 @@ liip_imagine:
         notice_photography_large:
             quality: 75
             filters:
-                upscale: { min: [920, 1200] }
-                thumbnail: { size: [920, 1200], mode: outbound }
+                upscale: { min: [1280, 720] }
+                thumbnail: { size: [1280, 720], mode: outbound }
 
         main_photography_small:
             quality: 75
