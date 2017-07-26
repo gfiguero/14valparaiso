@@ -19,7 +19,8 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNew">{{ icon('plus fa-fw') }}{{ 'notice.new.link'|trans }}</button>
+                        <a type="button" class="btn btn-primary" href="{{ path('notice_new') }}">{{ icon('plus fa-fw') }}{{ 'notice.new.link'|trans }}</a>
+                        {#}<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNew">{{ icon('plus fa-fw') }}{{ 'notice.new.link'|trans }}</button>{#}
                     </div>
                     <div class="modal fade" id="modalNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog modal-sm" role="document">
@@ -44,7 +45,6 @@
                                 <tr>
                                     <th>{{ knp_pagination_sortable(notices, 'notice.form.createdat'|trans, 'date') }}{% if sort == 'date' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(notices, 'notice.form.title'|trans, 'title') }}{% if sort == 'title' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ 'notice.form.photography'|trans }}</th>
                                     <th>{{ 'notice.form.actions'|trans }}</th>
                                 </tr>
                             </thead>
@@ -53,37 +53,8 @@
                                 <tr>
                                     <td>{% if notice.createdat %}{{ notice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}{% endif %}</td>
                                     <td>{% if notice.title %}{{ notice.title }}{% endif %}</td>
-                                    <td>{% if notice.photography %}<img class="media-object img-rounded" src="{{ vich_uploader_asset(notice, 'file')|imagine_filter('notice_photography_small') }}" alt="{{ 1 }}" />{% endif %}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit{{ notice.id }}">{{ icon('edit fa-fw') }}{{ 'notice.edit.link'|trans }}</button>
-                                        <div class="modal fade" id="modalEdit{{ notice.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">{{ 'notice.edit.title'|trans }}</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                {% if notice.photography %}
-                                                                    <img class="img-responsive img-rounded" src="{{ vich_uploader_asset(notice, 'file')|imagine_filter('notice_photography_medium') }}" alt="{{ 1 }}" />
-                                                                {% else %}
-                                                                    <img class="img-responsive img-rounded" src="{{ 'default'|imagine_filter('notice_photography_medium') }}" alt="{{ 1 }}" />
-                                                                {% endif %}
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                {% set editForm = attribute(editForms, key) %}
-                                                                {{ form_start(editForm) }}
-                                                                    {{ form_widget(editForm) }}
-                                                                    <button type="submit" class="btn btn-primary btn-block">{{ icon('check fa-fw') }}{{ 'notice.edit.confirm'|trans }}</button>
-                                                                {{ form_end(editForm) }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a type="button" class="btn btn-primary" href="{{ path('notice_edit', {'id': notice.id}) }}">{{ icon('edit fa-fw') }}{{ 'notice.edit.link'|trans }}</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete{{ notice.id }}">{{ icon('times fa-fw') }}{{ 'notice.delete.link'|trans }}</button>
                                         <div class="modal fade" id="modalDelete{{ notice.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                             <div class="modal-dialog modal-md" role="document">
@@ -128,20 +99,4 @@
     </div>
     <!-- /#page-wrapper -->
 
-{% endblock %}
-
-{% block javascript %}
-    <script type="text/javascript">
-        var optionsFileinput = {
-            showPreview: false,
-            showRemove: false,
-            showUpload: false,
-            showCancel: false,
-            showClose: false,
-            showZoom: false,
-            browseClass: 'btn btn-primary btn-block',
-            browseLabel: 'Seleccionar Archivo'
-        }
-        $(".fileinput").find('input').fileinput(optionsFileinput);
-    </script>
 {% endblock %}

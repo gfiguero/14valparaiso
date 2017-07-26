@@ -47,6 +47,15 @@
     background-color: #FFF;
 }
 </style>
+<style type="text/css">
+    .notice-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .notice-col {
+        display: flex;
+    }
+</style>
 {% endblock %}
 
 {% block body %}
@@ -88,6 +97,79 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-header">
+                    <h1>Noticias</h1>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="row notice-row">
+                {% for notice in notices %}
+                    <div class="col-xs-12 col-md-4 notice-col" data-toggle="modal" data-target="#modalShow{{ notice.id }}">
+                        <div class="thumbnail">
+                            {% if notice.photographies is not empty %}
+                                {% if notice.photographies[0] %}<img class="img-responsive img-rounded" src="{{ vich_uploader_asset(notice.photographies[0], 'imagefile')|imagine_filter('notice_photography_large') }}"/>{% endif %}
+                            {% endif %}
+                            <div class="caption">
+                                {% if notice.title %}<h2>{{ notice.title }}</h2>{% endif %}
+                                {% if notice.updatedat %}<p><small class="text-muted">{{ notice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</small></p>{% endif %}
+                                {% if notice.content %}<p>{{ notice.content|truncate(350, true) }}</p>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for k, notice in notices %}
+                    <div class="modal fade" id="modalShow{{ notice.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div id="carousel-notice-{{ k }}" class="carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                {% for photography in notice.photographies %}
+                                                    <li data-target="#carousel-notice-{{ k }}" data-slide-to="{{ k }}" {% if not loop.index0 %} class="active" {% endif %}></li>
+                                                {% endfor %}
+                                                </ol>
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner" role="listbox">
+                                                {% for k, photography in notice.photographies %}
+                                                    <div class="item {% if not loop.index0 %}{{ 'active' }}{% endif %}">
+                                                        <img class="img-responsive img-rounded" src="{{ vich_uploader_asset(photography, 'imagefile')|imagine_filter('notice_photography_large') }}"/>
+                                                    </div>
+                                                {% endfor %}
+                                                </div>
+                                                <!-- Controls -->
+                                                <a class="left carousel-control" href="#carousel-notice-{{ k }}" role="button" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                    <span class="sr-only">Anterior</span>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-notice-{{ k }}" role="button" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                    <span class="sr-only">Siguiente</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            {% if notice.title %}<h2>{{ notice.title }}</h2>{% endif %}
+                                            {% if notice.updatedat %}<p><small class="text-muted">{{ notice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</small></p>{% endif %}
+                                            {% if notice.content %}<p>{{ notice.content }}</p>{% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>    
     <div id="push"></div>
         
 {% endblock %}

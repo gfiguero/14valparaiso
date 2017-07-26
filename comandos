@@ -18,6 +18,7 @@ php app/console doctrine:generate:entities UnisystemAdminBundle:MemberCourse --p
 php app/console doctrine:generate:entities UnisystemAdminBundle:Resource --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:History --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:Notice --path=src
+php app/console doctrine:generate:entities UnisystemAdminBundle:NoticePhotography --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:Academy --path=src
 php app/console doctrine:generate:entities UnisystemAdminBundle:MainPhotography --path=src
 

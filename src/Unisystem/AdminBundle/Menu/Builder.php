@@ -18,7 +18,7 @@ class Builder implements ContainerAwareInterface
         $menu->setChildrenAttribute('id', 'top-menu');
         $menu->addChild('frontpage.index.link', array('route' => 'unisystem_frontpage_main'))->setAttribute('icon', 'flag fa-fw')->setAttribute('translation_domain', 'UnisystemAdminBundle');
 //        $menu->addChild('security.login.link', array('route' => 'fos_user_security_login'))->setAttribute('icon', 'sign-in fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
-//        $menu->addChild('security.logout.link', array('route' => 'fos_user_security_logout'))->setAttribute('icon', 'sign-out fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
+        $menu->addChild('security.logout.link', array('route' => 'unisystem_frontpage_logout'))->setAttribute('icon', 'sign-out fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
 //        $menu->addChild('profile.show.link', array('route' => 'fos_user_profile_show'))->setAttribute('icon', 'user fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
 //        $menu->addChild('registration.link', array('route' => 'fos_user_registration_register'))->setAttribute('icon', 'pencil-square-o fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');
 //        $menu->addChild('user.list.link', array('route' => 'user_index'))->setAttribute('icon', 'group fa-fw')->setAttribute('translation_domain', 'UnisystemUserBundle');

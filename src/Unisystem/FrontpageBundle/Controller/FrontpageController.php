@@ -10,9 +10,11 @@ class FrontpageController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $photographies = $em->getRepository('UnisystemAdminBundle:MainPhotography')->findAll();
+        $notices = $em->getRepository('UnisystemAdminBundle:Notice')->getFrontpageList();
 
         return $this->render('UnisystemFrontpageBundle:Page:main.html.twig', array(
             'photographies' => $photographies,
+            'notices' => $notices,
         ));
     }
 

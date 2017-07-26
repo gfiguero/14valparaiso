@@ -2,6 +2,7 @@
 
 namespace Unisystem\AdminBundle\Entity;
 
+use Symfony\Component\HttpFoundation\File\File;
 /**
  * Notice
  */
@@ -198,51 +199,22 @@ class Notice
     }
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var File $file
      */
-    private $photographies;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
+    private $file;
+
+    public function setFile(File $file = null)
     {
-        $this->photographies = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add photography
-     *
-     * @param \Unisystem\AdminBundle\Entity\NoticePhotography $photography
-     *
-     * @return Notice
-     */
-    public function addPhotography(\Unisystem\AdminBundle\Entity\NoticePhotography $photography)
-    {
-        $photography->setNotice($this);
-
-        $this->photographies[] = $photography;
-
+        $this->file = $file;
+        if ($file) { $this->updatedAt = new \DateTime('now'); }
         return $this;
     }
 
-    /**
-     * Remove photography
-     *
-     * @param \Unisystem\AdminBundle\Entity\NoticePhotography $photography
-     */
-    public function removePhotography(\Unisystem\AdminBundle\Entity\NoticePhotography $photography)
+    public function getFile()
     {
-        $this->photographies->removeElement($photography);
+        if ($this->file) { return $this->file; }
+        else 'default';
     }
 
-    /**
-     * Get photographies
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPhotographies()
-    {
-        return $this->photographies;
-    }
 }

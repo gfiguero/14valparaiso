@@ -8,6 +8,11 @@ Unisystem\AdminBundle\Entity\Notice:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        photographies:
+            targetEntity: Unisystem\AdminBundle\Entity\NoticePhotography
+            mappedBy: notice
+            cascade: ['persist', merge]
     fields:
         title:
             type: string
@@ -15,10 +20,6 @@ Unisystem\AdminBundle\Entity\Notice:
             nullable: true
         content:
             type: text
-            nullable: true
-        photography:
-            type: string
-            length: 300
             nullable: true
         createdAt:
             type: datetime

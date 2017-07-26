@@ -29,3 +29,10 @@ unisystem_admin_academy:
 unisystem_admin_main_photography:
     resource: "@UnisystemAdminBundle/Resources/config/routing/mainphotography.yml"
     prefix:   /mainphotography
+
+unisystem_admin_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /admin/notice
+        permanent: true

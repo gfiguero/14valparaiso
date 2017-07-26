@@ -13,7 +13,7 @@ imports:
     - { resource: braincrafted.yml }
     - { resource: vich_uploader.yml }
     - { resource: liip_imagine.yml }
-    - { resource: fos_user.yml }
+#    - { resource: fos_user.yml }
 #    - { resource: stfalcon_tinymce.yml }
 #    - { resource: oneup_uploader.yml }
 #    - { resource: "@AdminBundle/Resources/config/services.yml" }

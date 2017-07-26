@@ -124,6 +124,37 @@ resource:
         photography: Fotografía
         actions: Acciones
 
+notice:
+    sidemenu:
+        root: Noticias
+        index: Lista de noticias
+    new:
+        link: Registrar nueva noticia
+        title: Registrar nueva noticia
+        confirm: Confirmar Registro
+        flash: Noticia creada satistactoriamente
+    index:
+        link: Lista de noticias
+        title: Lista de noticias
+    edit:
+        link: Editar noticia
+        title: Editar noticia
+        confirm: Guardar Cambios
+        flash: Noticia editada satistactoriamente
+    delete:
+        link: Eliminar noticia
+        title: Eliminación de noticia
+        message: Los datos de la noticia no podrán ser recuperados
+        confirm: Confirmar Eliminación
+        flash: Noticia eliminada
+    form:
+        name: Nombre
+        content: Contenido
+        photographies: Fotografías
+        actions: Acciones
+        createdat: Fecha
+        title: Título
+
 history:
     sidemenu:
         root: Historia

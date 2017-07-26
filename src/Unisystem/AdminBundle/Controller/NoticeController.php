@@ -4,6 +4,7 @@ namespace Unisystem\AdminBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Unisystem\AdminBundle\Entity\Notice;
 use Unisystem\AdminBundle\Form\NoticeType;
@@ -62,18 +63,21 @@ class NoticeController extends Controller
     {
 
         $notice = new Notice();
-        $form = $this->createForm('Unisystem\AdminBundle\Form\NoticeType', $notice);
-        $form->handleRequest($request);
+        $newForm = $this->createForm('Unisystem\AdminBundle\Form\NoticeType', $notice);
+        $newForm->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($newForm->isSubmitted() && $newForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($notice);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'notice.new.flash' );    
+            return $this->redirect($this->generateUrl('notice_index'));
 
         }
 
-        return $this->redirect($request->headers->get('referer'));
+        return $this->render('UnisystemAdminBundle:Notice:new.html.twig', array(
+            'newForm' => $newForm->createView(),
+        ));
 
     }
 
@@ -86,17 +90,35 @@ class NoticeController extends Controller
 
         $deleteForm = $this->createDeleteForm($notice);
         $editForm = $this->createForm('Unisystem\AdminBundle\Form\NoticeType', $notice);
+
+        $originalPhotographies = new ArrayCollection();
+        foreach ($notice->getPhotographies() as $photography) {
+            $originalPhotographies->add($photography);
+        }
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
+
+            $newPhotographies = $notice->getPhotographies();
+            foreach ($originalPhotographies as $originalPhotography) {
+                if (false === $newPhotographies->contains($originalPhotography)) {
+                    $em->remove($originalPhotography);
+                }
+            }
+
             $em->persist($notice);
             $em->flush();
             $request->getSession()->getFlashBag()->add( 'success', 'notice.edit.flash' );    
+            return $this->redirect($this->generateUrl('notice_index'));
 
         }
 
-        return $this->redirect($request->headers->get('referer'));
+        return $this->render('UnisystemAdminBundle:Notice:edit.html.twig', array(
+            'editForm' => $editForm->createView(),
+        ));
 
     }
 

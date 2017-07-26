@@ -1,0 +1,25 @@
+Unisystem\AdminBundle\Entity\NoticePhotography:
+    type: entity
+    table: NoticePhotography
+    repositoryClass: Unisystem\AdminBundle\Entity\NoticePhotographyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        notice:
+            targetEntity: Unisystem\AdminBundle\Entity\Notice
+            inversedBy: photographies
+    fields:
+        image:
+            type: string
+            length: 300
+            nullable: true
+        createdAt:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+    lifecycleCallbacks: {  }

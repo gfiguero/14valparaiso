@@ -2,13 +2,13 @@ unisystem_admin:
     resource: "@UnisystemAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
 
-unisystem_user:
-    resource: "@UnisystemUserBundle/Resources/config/routing.yml"
-    prefix:   /admin/user
+#unisystem_user:
+#    resource: "@UnisystemUserBundle/Resources/config/routing.yml"
+#    prefix:   /admin/user
 
-unisystem_user_management:
-    resource: "@UnisystemUserBundle/Resources/config/management.yml"
-    prefix:   /
+#unisystem_user_management:
+#    resource: "@UnisystemUserBundle/Resources/config/management.yml"
+#    prefix:   /
 
 unisystem_frontpage:
     resource: "@UnisystemFrontpageBundle/Resources/config/routing.yml"
